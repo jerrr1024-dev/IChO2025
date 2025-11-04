@@ -3,43 +3,42 @@
         "name": "IChO-2025_1",
         "background": {
             "image": "/images/1/1_bg.png",
-            "context": "Sesquiterpenes have the formula $C_{15}H_{24}$. They are secondary metabolites in plants and both deter insects which eat plants and attract animals which eat the insects. Isocaryophyllene (i-Cy) is a sesquiterpene found in oregano, rosemary, pepper, and cloves. The structural formula of i-Cy can be determined by performing various reactions and analysing the products as shown in the figure."
+            "context": "Sesquiterpenes have the formula C_{15}H_{24}. They are secondary metabolites in plants and both deter insects which eat plants and attract animals which eat the insects. Isocaryophyllene (i-Cy) is a sesquiterpene found in oregano, rosemary, pepper, and cloves. The structural formula of i-Cy can be determined by performing various reactions and analysing the products as shown in the figure."
         },
         "total_points": 34
     },
     {
-        "name": "IChO-2025_1-1",
+        "name": "IChO-2025_1.1",
         "modality": "image + text",
         "type": "structure_drawing",
-        "evalution": "smiles_comparison",
+        "evaluation": "smiles_comparison",
         "points": 7,
         "field": "",
         "source": "IChO-2025",
         "question": {
-            "context": "Draw the structures of i-Cy, A, and B. Stereochemistry is not required.",
+            "context": "Draw the structures of i-Cy, A, and B.",
             "image": "/images/1/1.1_ques.png",
-            "constraint": "Stereochemistry is not required.",
             "parsing_note": "The reaction diagram has been converted to reaction_scheme.",
-            "requirement": "",
+            "requirement": "Convert the drawn structures to SMILES format (stereochemistry not required).",
             "reaction_scheme": [
                 {
                     "reactant_name": "i-Cy",
-                    "reactant_formula": "C15H24",
-                    "conditions": "(1) $H_2$, Pd/C",
+                    "reactant_formula": "C_{15}H_{24}",
+                    "conditions": "(1) H_{2}, Pd/C",
                     "product_name": "B",
-                    "product_formula": "C15H28"
+                    "product_formula": "C_{15}H_{28}"
                 },
                 {
                     "reactant_name": "i-Cy",
-                    "reactant_formula": "C15H24",
-                    "conditions": "(1) BH3/THF (1/3 equiv.), THF (2) H2O2, NaOH, H2O",
+                    "reactant_formula": "C_{15}H_{24}",
+                    "conditions": "(1) BH_{3}/THF (1/3 equiv.), THF (2) H_{2}O_{2}, NaOH, H_{2}O",
                     "product_name": "A",
-                    "product_formula": "C15H26O"
+                    "product_formula": "C_{15}H_{26}O"
                 },
                 {
                     "reactant_name": "i-Cy",
-                    "reactant_formula": "C15H24",
-                    "conditions": "1) O3, CH2Cl2 2) Zn, CH3COOH",
+                    "reactant_formula": "C_{15}H_{24}",
+                    "conditions": "1) O_{3}, CH_{2}Cl_{2} 2) Zn, CH_{3}COOH",
                     "product_smiles": [
                         "C=O",
                         "CC1(C)[C@]([C@@]([H])(C(CCC([H])=O)=O)C1)([H])CCC(C)=O"
@@ -48,7 +47,7 @@
                 {
                     "reactant_name": "A",
                     "reactant_formula": "C15H26O",
-                    "conditions": "1) O3, CH2Cl2 2) Zn, CH3COOH",
+                    "conditions": "1) O_{3}, CH_{2}Cl_{2} 2) Zn, CH_{3}COOH",
                     "product_name": "C",
                     "product_smiles": "CC1(C)[C@]([C@@]([H])([C@](CO)(CCC([H])=O)[H])C1)([H])CCC(C)=O"
                 }
@@ -114,10 +113,10 @@
         ]
     },
     {
-        "name": "IChO-2025_1-2",
+        "name": "IChO-2025_1.2",
         "modality": "image + text",
         "type": "smiles_tagging",
-        "evalution": "text_checking",
+        "evaluation": "text_checking",
         "points": 3,
         "field": "",
         "source": "IChO-2025",
@@ -152,62 +151,345 @@
         }
     },
     {
-        "name": "IChO-2025_1-3",
+        "name": "IChO-2025_1.3",
         "modality": "image + text",
         "type": "structure_drawing",
-        "evalution": "smiles_comparison",
+        "evaluation": "smiles_comparison",
         "points": 6,
         "field": "",
         "source": "IChO-2025",
         "question": {
             "context": "Clovene (Cv) can be synthesised from i-Cy under acid catalysis. The synthesis of Cv starts from compound D. Draw the structures of compounds E and F.",
             "image": "/images/1/1.3_ques.png",
-            "constraint": "Stereochemistry is not required.",
             "parsing_note": "The reaction diagram has been converted to reaction_scheme.",
-            "requirement": "output the smiles the drawing structure.",
+            "requirement": "Convert the drawn structures to SMILES format (stereochemistry not required).",
             "reaction_scheme": [
                 {
                     "reactant_name": "D",
                     "reactant_smiles": "C[C@@]1(CCC2)C=CC(O)[C@@]2(CC(OC)=O)C1",
-                    "conditions": "1) $H^+$ (cat.)",
+                    "conditions": "1) H^{+} (cat.)",
                     "product_name": "E",
-                    "product_formula": "C12H16O2"
+                    "product_formula": "C_{12}H_{16}O_{2}"
                 },
                 {
                     "reactant_name": "E",
-                    "reactant_formula": "C12H16O2",
-                    "conditions": "1) $LiAlH_4$ $Et_2O$ 2) $H^+$, $H_2O$",
-                    "product_name": "F",
+                    "reactant_formula": "C_{12}H_{16}O_{2}",
+                    "conditions": "1) LiAlH_{4}, Et_{2}O; 2) H^{+}, H_{2}O",
+                    "product_name": "F"
                 },
                 {
                     "reactant_name": "F",
-                    "conditions": [
-                        {
-                            "step": 1,
-                            "reagents": [
-                                "1"
-                            ]
-                        }
-                    ],
+                    "step_name": "1",
                     "product_name": "G",
                     "product_smiles": "C[C@]1(C[C@@]2(CCO)CCC1)C=CC2=O"
                 },
                 {
                     "reactant_name": "G",
                     "reactant_smiles": "C[C@]1(C[C@@]2(CCO)CCC1)C=CC2=O",
-                    "conditions": [
-                        {
-                            "step": 1,
-                            "reagents": [
-                                "2"
-                            ]
-                        }
-                    ],
+                    "step_name": "2",
                     "product_name": "H",
                     "product_smiles": "CC1(C)CCC2C(=CC1)C(=O)C(CC(=O)O)CC2"
                 }
             ]
         },
-        "answer": {}
+        "answer": [
+            {
+                "name": "E",
+                "image": "/images/1/1.3_ans_E.png",
+                "smiles": "O=C1C[C@@]23C[C@@](CCC3)(C)C=C[C@H]2O1",
+                "alternative_smiles": "O=C1CC23CC(CCC3)(C)C=CC2O1",
+                "points": 3,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "If the structure is not cyclic and only the ester is removed.",
+                            "deduction": -2
+                        }
+                    ],
+                    "notes": "Stereochemistry will not be marked."
+                }
+            },
+            {
+                "name": "F",
+                "image": "/images/1/1.3_ans_F.png",
+                "smiles": "O[C@H]1[C@@]2(CCO)C[C@@](CCC2)(C)C=C1",
+                "alternative_smiles": "OC1C2(CCO)CC(CCC2)(C)C=C1",
+                "points": 3,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "If reducing the ester to an aldehyde (and alcohol).",
+                            "deduction": -2
+                        }
+                    ],
+                    "notes": "Stereochemistry will not be marked."
+                }
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_1.4-5",
+        "modality": "image + text",
+        "type": "choice",
+        "evaluation": "checking",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Clovene (Cv) can be synthesised from i-Cy under acid catalysis. The synthesis of Cv starts from compound D. For steps '1' and '2' several reagents could be considered. For example: A. PCC B. K_{2}Cr_{2}O_{7}, H_{2}SO_{4}, H_{2}O C. MnO_{2} D. (i) OsO_{4} , (ii) KHSO_{3} From the reagents above, tick which one(s) would be suitable for step '1'. From the reagents above, tick which one(s) would be suitable for step '2'.",
+            "image": "/images/1/1.4-5_ques.png",
+            "parsing_note": "The structure in the image has been converted to SMILES format.",
+            "smiles": {
+                "name": "PCC",
+                "components": [
+                    "c1cc[nH+]cc1",
+                    "[O-][Cr](Cl)(=O)=O"
+                ]
+            },
+            "requirement": "Convert the drawn structures to SMILES format (stereochemistry not required)."
+        },
+        "answer": [
+            {
+                "name": "step 1",
+                "choice": "C",
+                "points": 1
+            },
+            {
+                "name": "step 2",
+                "choice": "B",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_1.6",
+        "modality": "image + text",
+        "type": "structure_drawing",
+        "evaluation": "smiles_comparison",
+        "points": 8,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Draw the structures of compounds I, J, and K.",
+            "image": "/images/1/1.6_ques.png",
+            "parsing_note": "The reaction diagram has been converted to reaction_scheme.",
+            "requirement": "Convert the drawn structures to SMILES format (stereochemistry not required).",
+            "reaction_scheme": [
+                {
+                    "reactant_name": "H",
+                    "reactant_smiles": "O=C1C=C[C@]2(CCC[C@]1(CC(O)=O)C2)C",
+                    "conditions": "1) H_{2}, Pd/C; 2) CH_{3}OH H^{+}",
+                    "product_name": "I"
+                },
+                {
+                    "reactant_name": "I",
+                    "conditions": "1) HOCH_{2}CH_{2}OH, H^{+}; 2) NaOH, H_{2}O",
+                    "product_name": "J"
+                },
+                {
+                    "reactant_name": "J",
+                    "conditions": "1) SOCl_{2}; 2) Et_{2}CuLi; 3) H^{+}, H_{2}O",
+                    "product_name": "K"
+                },
+                {
+                    "reactant_name": "K",
+                    "conditions": "1) NaOH, H_{2}O, Δ",
+                    "intermediate_smiles": "CC1=C2CC[C@]3(CCC[C@]2(CC1=O)C3)C",
+                    "product_name": "Cv",
+                    "product_smiles": "CC1([C@@]2(CC[C@]3(CCC[C@]2(C=C1)C3)C)[H])C"
+                }
+            ]
+        },
+        "answer": [
+            {
+                "name": "I",
+                "image": "/images/1/1.6_ans_I.png",
+                "smiles": "O=C1C=C[C@]2(CCC[C@]1(CC(OC)=O)C2)C",
+                "alternative_smiles": "O=C1C=CC2(CCCC1(CC(OC)=O)C2)C",
+                "points": 3,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "if double bond is not reduced.",
+                            "deduction": -2
+                        },
+                        {
+                            "condition": "if ester is not formed",
+                            "deduction": -1
+                        }
+                    ],
+                    "notes": "Stereochemistry will not be marked for I. Minimum score is 0 pt."
+                }
+            },
+            {
+                "name": "J",
+                "image": "/images/1/1.6_ans_J.png",
+                "smiles": "CC1CC[C@@]([H])(C(C)(C)C2)[C@@]2([H])C(C)CCC1",
+                "alternative_smiles": "CC1CCC([H])(C(C)(C)C2)C2([H])C(C)CCC1",
+                "points": 2,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "if acetal group is incorrect/not present.",
+                            "deduction": -1
+                        },
+                        {
+                            "condition": "if original ester is still present; protective group is in place.",
+                            "deduction": -1
+                        },
+                        {
+                            "condition": "if ester is formed with ethylene glycol.",
+                            "deduction": -1.5
+                        }
+                    ],
+                    "notes": "Stereochemistry will not be marked for I. Minimum score is 0 pt."
+                }
+            },
+            {
+                "name": "K",
+                "image": "/images/1/1.6_ans_K.png",
+                "smiles": "O=C1C=C[C@]2(CCC[C@]1(CC(CC)=O)C2)C",
+                "alternative_smiles": "O=C1C=CC2(CCCC1(CC(CC)=O)C2)C",
+                "points": 3,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "If acetal protecting group is still present.",
+                            "deduction": -1
+                        },
+                        {
+                            "condition": "If acid is turned into acid chloride and protective group is removed.",
+                            "deduction": -2
+                        },
+                        {
+                            "condition": "If five-membered ring is already formed with an alcohol group still present.",
+                            "deduction": -2
+                        }
+                    ],
+                    "notes": "Stereochemistry will not be marked for I. Minimum score is 0 pt."
+                }
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_1.7-8",
+        "modality": "image + text",
+        "type": "structure_drawing",
+        "evaluation": "smiles_comparison",
+        "points": 4,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Humulene (Hu) is another sesquiterpene. It can be converted to  α-caryophyllene alcohol (α-Ca), which is similar in structure to Cv. This conversion is an acid-catalysed hydration reaction which takes place via multiple intermediate structures. Incomplete structures of some intermediates, X and Y, are shown. The transformation from Hu to X is an acid-catalysed isomerisation reaction. Intermediate Y is charged.",
+            "image": "/images/1/1.7-8_ques.png",
+            "parsing_note": "The reaction diagram has been converted to reaction_scheme.",
+            "requirement": "Convert the completed structures to SMILES format.",
+            "reaction_scheme": [
+                {
+                    "reactant_name": "Hu",
+                    "reactant_smiles": "C/C1=C\\CCC(C)(C)/C=C/C/C(C)=C/CC1",
+                    "conditions": "1) H^{+} (cat.)",
+                    "product_name": "X",
+                    "product_smiles": "CC1CCCC(C)CCC(C)(C)CCC1"
+                },
+                {
+                    "reactant_name": "X",
+                    "reactant_smiles": "CC1CCCC(C)CCC(C)(C)CCC1",
+                    "conditions": "1) +H^{+}",
+                    "product_name": "Y",
+                    "product_smiles": "CC1(CC2C3(C)CCCC(C)C3C2C1)C"
+                },
+                {
+                    "reactant_name": "Y",
+                    "reactant_smiles": "CC1(CC2C3(C)CCCC(C)C3C2C1)C",
+                    "conditions": "1) H_{2}O, -H^{+}",
+                    "product_name": "α-Ca",
+                    "product_smiles": "CC1(CC(C2(C)CCCC3(C)C2O)C3C1)C"
+                }
+            ]
+        },
+        "answer": [
+            {
+                "name": "X",
+                "image": "/images/1/1.7-8_ans_X.png",
+                "smiles": "CC1=C\\CC/C(C)=C/CC(C)(C)C/C=C/1",
+                "alternative_smiles": "C/C1=C/C=C/C(C)(C)C/C=C(C)/CCC1",
+                "points": 2,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "for each mistake down to zero.",
+                            "deduction": -1
+                        },
+                        {
+                            "condition": "if all double bonds are mirrored.",
+                            "deduction": -1
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Y",
+                "image": "/images/1/1.7-8_ans_Y.png",
+                "smiles": "CC1(C)CC2C3(CCC[C+](C3C2C1)C)C",
+                "points": 2,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "if any other charge or group has been added to the structure.",
+                            "deduction": -2
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_1.9",
+        "modality": "image + text",
+        "type": "smiles_tagging",
+        "evaluation": "text_checking",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Five carbon atoms are circled in Hu. Through understanding the mechanism we can determine where these five carbon atoms end up in α-Ca. Circle the five corresponding carbon atoms in α-Ca which are circled in Hu.",
+            "image": [
+                {
+                    "Hu": "/images/1/1.9_ques_Hu.png"
+                },
+                {
+                    "Y": "/images/1/1.9_ques_α-Ca.png"
+                }
+            ],
+            "smiles": {
+                "Hu": "CC1(C)CC/C=C(C)/CC/C=C(C)/C/C=C/1",
+                "Y": "CC1(CC(C2(C)CCCC3(C)C2O)C3C1)C"
+            },
+            "parsing_note": "The structure in the image has been converted to SMILES format.",
+            "requirement": "1) Count only carbon atoms (C) in the SMILES string from left to right, ignoring all other atoms like H, O, N. Number each carbon sequentially as C-1, C-2, C-3, etc. 2) In Hu, C-6, C-7, C-12, C-14, C-15 are circled based on Hu smiles. 2) Give the five corresponding carbon atoms in α-Ca which are circled in Hu, Output format: 'C-X, C-X'."
+        },
+        "answer": {
+            "context": "C-5, C-6, C-8, C-12, C-13",
+            "image": "/images/1/1.9_ans.png",
+            "grading": {
+                "partial_credit": [
+                    {
+                        "condition": "if five circles are correct.",
+                        "deduction": 0
+                    },
+                    {
+                        "condition": "if four circles are correct and one incorrect or missing.",
+                        "deduction": -1
+                    },
+                    {
+                        "condition": "for more than five carbons circled or two or more incorrect/missing.",
+                        "deduction": -2
+                    }
+                ],
+                "notes": "Minimum score is 0"
+            },
+            "points": 2
+        }
     }
 ]
