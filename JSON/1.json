@@ -126,7 +126,7 @@
             "image": "/images/1/1.2_ques.png",
             "parsing_note": "The structure in the image has been converted to SMILES format.",
             "smiles": "[H][C@@]1(C(C)(C)C[C@]1([H])[C@@](CCC([H])=O)(CO)[H])CCC(C)=O",
-            "requirement": "(1) Count only carbon atoms (C) in the SMILES string from left to right, ignoring all other atoms like H, O, N. Number each carbon sequentially as C-1, C-2, C-3, etc. 2) Assign R or S configuration to each. Output format: 'C-X: R/S'."
+            "requirement": "1) Count only carbon atoms (C) in the SMILES string from left to right, ignoring all other atoms like H, O, N. Number each carbon sequentially as C-1, C-2, C-3, etc. 2) Assign R or S configuration to each. Output format: 'C-X: R/S'."
         },
         "answer": {
             "context": "C-1: R, C-6: S, C-7: R",
@@ -150,5 +150,64 @@
             },
             "points": 3
         }
+    },
+    {
+        "name": "IChO-2025_1-3",
+        "modality": "image + text",
+        "type": "structure_drawing",
+        "evalution": "smiles_comparison",
+        "points": 6,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Clovene (Cv) can be synthesised from i-Cy under acid catalysis. The synthesis of Cv starts from compound D. Draw the structures of compounds E and F.",
+            "image": "/images/1/1.3_ques.png",
+            "constraint": "Stereochemistry is not required.",
+            "parsing_note": "The reaction diagram has been converted to reaction_scheme.",
+            "requirement": "output the smiles the drawing structure.",
+            "reaction_scheme": [
+                {
+                    "reactant_name": "D",
+                    "reactant_smiles": "C[C@@]1(CCC2)C=CC(O)[C@@]2(CC(OC)=O)C1",
+                    "conditions": "1) $H^+$ (cat.)",
+                    "product_name": "E",
+                    "product_formula": "C12H16O2"
+                },
+                {
+                    "reactant_name": "E",
+                    "reactant_formula": "C12H16O2",
+                    "conditions": "1) $LiAlH_4$ $Et_2O$ 2) $H^+$, $H_2O$",
+                    "product_name": "F",
+                },
+                {
+                    "reactant_name": "F",
+                    "conditions": [
+                        {
+                            "step": 1,
+                            "reagents": [
+                                "1"
+                            ]
+                        }
+                    ],
+                    "product_name": "G",
+                    "product_smiles": "C[C@]1(C[C@@]2(CCO)CCC1)C=CC2=O"
+                },
+                {
+                    "reactant_name": "G",
+                    "reactant_smiles": "C[C@]1(C[C@@]2(CCO)CCC1)C=CC2=O",
+                    "conditions": [
+                        {
+                            "step": 1,
+                            "reagents": [
+                                "2"
+                            ]
+                        }
+                    ],
+                    "product_name": "H",
+                    "product_smiles": "CC1(C)CCC2C(=CC1)C(=O)C(CC(=O)O)CC2"
+                }
+            ]
+        },
+        "answer": {}
     }
 ]
