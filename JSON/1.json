@@ -1,0 +1,154 @@
+[
+    {
+        "name": "IChO-2025_1",
+        "background": {
+            "image": "/images/1/1_bg.png",
+            "context": "Sesquiterpenes have the formula $C_{15}H_{24}$. They are secondary metabolites in plants and both deter insects which eat plants and attract animals which eat the insects. Isocaryophyllene (i-Cy) is a sesquiterpene found in oregano, rosemary, pepper, and cloves. The structural formula of i-Cy can be determined by performing various reactions and analysing the products as shown in the figure."
+        },
+        "total_points": 34
+    },
+    {
+        "name": "IChO-2025_1-1",
+        "modality": "image + text",
+        "type": "structure_drawing",
+        "evalution": "smiles_comparison",
+        "points": 7,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Draw the structures of i-Cy, A, and B. Stereochemistry is not required.",
+            "image": "/images/1/1.1_ques.png",
+            "constraint": "Stereochemistry is not required.",
+            "parsing_note": "The reaction diagram has been converted to reaction_scheme.",
+            "requirement": "",
+            "reaction_scheme": [
+                {
+                    "reactant_name": "i-Cy",
+                    "reactant_formula": "C15H24",
+                    "conditions": "(1) $H_2$, Pd/C",
+                    "product_name": "B",
+                    "product_formula": "C15H28"
+                },
+                {
+                    "reactant_name": "i-Cy",
+                    "reactant_formula": "C15H24",
+                    "conditions": "(1) BH3/THF (1/3 equiv.), THF (2) H2O2, NaOH, H2O",
+                    "product_name": "A",
+                    "product_formula": "C15H26O"
+                },
+                {
+                    "reactant_name": "i-Cy",
+                    "reactant_formula": "C15H24",
+                    "conditions": "1) O3, CH2Cl2 2) Zn, CH3COOH",
+                    "product_smiles": [
+                        "C=O",
+                        "CC1(C)[C@]([C@@]([H])(C(CCC([H])=O)=O)C1)([H])CCC(C)=O"
+                    ]
+                },
+                {
+                    "reactant_name": "A",
+                    "reactant_formula": "C15H26O",
+                    "conditions": "1) O3, CH2Cl2 2) Zn, CH3COOH",
+                    "product_name": "C",
+                    "product_smiles": "CC1(C)[C@]([C@@]([H])([C@](CO)(CCC([H])=O)[H])C1)([H])CCC(C)=O"
+                }
+            ]
+        },
+        "answer": [
+            {
+                "name": "A",
+                "image": "/images/1/1.1_ans_A.png",
+                "smiles": "CC1=CCC[C@@H](CO)[C@]2([H])[C@]([H])(C(C)(C)C2)CC1",
+                "alternative_smiles": "CC1=CCCC(CO)C2([H])C([H])(C(C)(C)C2)CC1",
+                "points": 2,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "if missing a carbon atom in the ring or added another carbon atom in the ring.",
+                            "deduction": -1
+                        }
+                    ],
+                    "notes": "Stereochemistry will not be marked for A."
+                }
+            },
+            {
+                "name": "B",
+                "image": "/images/1/1.1_ans_B.png",
+                "smiles": "CC1CC[C@@]([H])(C(C)(C)C2)[C@@]2([H])C(C)CCC1",
+                "alternative_smiles": "CC1CCC([H])(C(C)(C)C2)C2([H])C(C)CCC1",
+                "points": 2,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "If the structure is incorrect, but consistent with isocaryophyllene (and 2 equivalents of $H_2$ are added).",
+                            "deduction": 0
+                        }
+                    ],
+                    "notes": "Also 2 pt  Stereochemistry will not be marked for B."
+                }
+            },
+            {
+                "name": "i-Cy",
+                "image": "/images/1/1.1_ans_i-Cy.png",
+                "smiles": "C/C(CC[C@]1([H])[C@]2([H])CC1(C)C)=C/CCC2=C",
+                "alternative_smiles": "C/C(CCC1([H])C2([H])CC1(C)C)=C/CCC2=C",
+                "points": 3,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "If missing a carbon atom or added another carbon atom in the ring.",
+                            "deduction": -1
+                        },
+                        {
+                            "condition": "If a ring is made by combining two other C atoms and added a methyl to the other carbon",
+                            "deduction": -1
+                        },
+                        {
+                            "condition": "If no second ring is present; only added CH3 to all/one/two carbonyls in the right-hand structure.",
+                            "deduction": -2
+                        }
+                    ],
+                    "notes": "The trans-isomer gets full marks. Stereochemistry will not be marked for i-Cy."
+                }
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_1-2",
+        "modality": "image + text",
+        "type": "smiles_tagging",
+        "evalution": "text_checking",
+        "points": 3,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Circle the stereocentres in compound C and assign them as R or S.",
+            "image": "/images/1/1.2_ques.png",
+            "parsing_note": "The structure in the image has been converted to SMILES format.",
+            "smiles": "[H][C@@]1(C(C)(C)C[C@]1([H])[C@@](CCC([H])=O)(CO)[H])CCC(C)=O",
+            "requirement": "(1) Count only carbon atoms (C) in the SMILES string from left to right, ignoring all other atoms like H, O, N. Number each carbon sequentially as C-1, C-2, C-3, etc. 2) Assign R or S configuration to each. Output format: 'C-X: R/S'."
+        },
+        "answer": {
+            "context": "C-1: R, C-6: S, C-7: R",
+            "image": "/images/1/1.2_ans.png",
+            "grading": {
+                "partial_credit": [
+                    {
+                        "condition": "Each centre not correctly circled",
+                        "deduction": -1
+                    },
+                    {
+                        "condition": "Each descriptor not correct",
+                        "deduction": -0.5
+                    },
+                    {
+                        "condition": "Each incorrect centre is circled.",
+                        "deduction": -1
+                    }
+                ],
+                "notes": "Minimum score is 0"
+            },
+            "points": 3
+        }
+    }
+]
