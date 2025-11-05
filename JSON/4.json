@@ -1,0 +1,53 @@
+[
+    {
+        "name": "IChO-2025_4",
+        "background": {
+            "image": "/images/4/4_bg.png",
+            "context": "The Dubai Tennis Championships is a prestigious tournament held annually in UAE. Many of the world's top players, including Rafael Nadal, Roger Federer, Novak Djokovic, and Andy Murray have won titles there. The composition of tennis balls has evolved over hundreds of years. To ensure a good bounce, the inside of modern tennis balls is pressurised above atmospheric pressure. However, old hollow tennis balls just contained air at atmospheric pressure. In this problem, assume tennis balls have an inner radius of R = 3.0 cm that remains constant throughout the pressurisation process. Assume that the composition of air is 20% O_{2} and 80% N_{2} by volume. Consider that overpressure does not expand the ball."
+        },
+        "total_points": 40
+    },
+    {
+        "name": "IChO-2025_4.1",
+        "modality": "text",
+        "type": "computing",
+        "evaluation": "checking",
+        "points": 3,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Calculate the mass m (in g) of air inside an old tennis ball at T_{0} = 25°C."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "The inner ball pressure is equal to the atmospheric pressure. The average molar mass of air, $M = 0.8 \\times 28.02 \\text{ g mol}^{-1} + 0.2 \\times 32.00 \\text{ g mol}^{-1} = 28.816 \\text{ g mol}^{-1}$",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "The ball volume is: $V = \\frac{4}{3}\\pi R^3 = \\frac{4}{3} \\cdot \\pi \\cdot (3.0)^3 = 113.1 \\text{ mL}$",
+                "points": 1
+            },
+            {
+                "step": 3,
+                "content": "Using the ideal gas law, we find the air mass as follows: $p = \\frac{nRT}{V} = \\frac{mRT}{MV} \\Rightarrow m = \\frac{pMV}{RT} = \\frac{101325 \\text{ Pa} \\times 28.816 \\text{ g mol}^{-1} \\times 1.131 \\times 10^{-4} \\text{ m}^3}{8.314 \\text{ J K}^{-1} \\text{ mol}^{-1} \\times 298.15 \\text{ K}} = 0.133 \\text{ g}$",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_4.2-3",
+        "modality": "image + text",
+        "type": "computing",
+        "evaluation": "checking",
+        "points": 3,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Chemists then discovered how to pressurise a ball above atmospheric pressure using a reaction between compounds A and B, which forms gas C (to create additional inner pressure) plus other non-gaseous products. A capsule with a quantity  m_{mix} = 0.3389 g of a stoichiometric mixture of two white inorganic compounds A and B was placed inside a ball filled with air at atmospheric pressure. They reacted completely inside the ball upon heating to form gas C and other products (reaction 1) to produce an overall pressure inside the ball of p = 1.600 atm (at 25°C). Once this ball was opened, all residue inside was collected and dissolved in water. The dropping of silver nitrate in that solution gave a white precipitate (reaction 2). This collected precipitate could be partially dissolved in a concentrated aqueous solution of B. By increasing the pH of this mixture, the precipitate dissolved completely (reaction 3). If the same initial capsule of A+B is dissolved in water and concentrated solution of silver nitrate added,  m_{precipitate} = 0.8224 g of white precipitate formed which was approximately twice the mass of precipitate formed in reaction 2. When the capsule of A + B dissolved in a solution of HI the formation of gas D started, and the solution turned brown (reaction 4). Upon further addition of sodium thiosulfate this colour disappeared (reaction 5). The densities of gases C and D differ by no more than  10%. Write the chemical formulae of compounds A-D. Write equations for reactions 1-5.",
+            "image": "/images/4/4.2_ques.png",
+            
+        }
+    }
+]

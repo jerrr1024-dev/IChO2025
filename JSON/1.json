@@ -46,7 +46,7 @@
                 },
                 {
                     "reactant_name": "A",
-                    "reactant_formula": "C15H26O",
+                    "reactant_formula": "C_{15}H_{26}O",
                     "conditions": "1) O_{3}, CH_{2}Cl_{2} 2) Zn, CH_{3}COOH",
                     "product_name": "C",
                     "product_smiles": "CC1(C)[C@]([C@@]([H])([C@](CO)(CCC([H])=O)[H])C1)([H])CCC(C)=O"
