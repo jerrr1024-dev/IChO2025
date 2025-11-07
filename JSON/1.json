@@ -5,7 +5,7 @@
             "image": "/images/1/1_bg.png",
             "context": "Sesquiterpenes have the formula C_{15}H_{24}. They are secondary metabolites in plants and both deter insects which eat plants and attract animals which eat the insects. Isocaryophyllene (i-Cy) is a sesquiterpene found in oregano, rosemary, pepper, and cloves. The structural formula of i-Cy can be determined by performing various reactions and analysing the products as shown in the figure."
         },
-        "total_points": 34
+        "points": 34
     },
     {
         "name": "IChO-2025_1.1",
@@ -18,8 +18,8 @@
         "question": {
             "context": "Draw the structures of i-Cy, A, and B.",
             "image": "/images/1/1.1_ques.png",
-            "parsing_note": "The reaction diagram has been converted to reaction_scheme.",
             "requirement": "Convert the drawn structures to SMILES format (stereochemistry not required).",
+            "parsing_note": "The reaction diagram has been converted to reaction_scheme.",
             "reaction_scheme": [
                 {
                     "reactant_name": "i-Cy",
