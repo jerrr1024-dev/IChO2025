@@ -1,0 +1,256 @@
+[
+    {
+        "name": "IChO-2025_2",
+        "Rapamycin Synthesis Problem",
+        "background": {
+            "image": "/images/2/2_bg.png",
+            "context": "Rapamycin was isolated from the bacterium Streptomyces hygroscopicus in 1972. It acts as a molecular glue and inhibits the activity of the protein mTOR through binding to another protein. It has been used to treat various diseases. The stereochemical complexity of rapamycin makes its total synthesis challenging. The figure shows part of the first total synthesis by the Nicolaou group.",
+            "parsing_note": "The molecular structure has been converted to SMILES format.",
+            "molecular_name": "Rapamycin",
+            "smiles": "C[C@@H]1CCC2C[C@@H](/C(=C/C=C/C=C/[C@H](C[C@H](C(=O)[C@@H]([C@@H](/C(=C/[C@H](C(=O)C[C@H](OC(=O)[C@@H]3CCCCN3C(=O)C(=O)[C@@]1(O2)O)[C@H](C)C[C@@H]4CC[C@H]([C@@H](C4)OC)O)C)/C)O)OC)C)C)/C)OC"
+        },
+        "points": 67
+    },
+    {
+        "name": "IChO-2025_2.1",
+        "modality": "image + text",
+        "type": "structure_drawing",
+        "evaluation": "smiles_comparison",
+        "points": 12,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "The major stereoisomer C is formed from the chromium-mediated coupling reaction of aldehyde A and vinyl iodide B and can be predicted using the Felkin-Anh model without chelation. Draw a Newman projection showing the best approach of the nucleophile in this reaction. Use the labels  =O, -H, -R^{1}, -OMe,and Nu. Draw the full structure of the major diastereomer C showing all stereochemistry.",
+            "image": "/images/2/2.1_ques.png",
+            "parsing_note": "The reaction diagram has been converted to reaction_scheme.",
+            "requirement": "Draw a Newman projection showing the best approach of the nucleophile in this reaction. Use the labels =O, –H, –R¹, –OMe, and Nu. The projection should be viewed along the C(α)-C(carbonyl) bond. Draw the structure of compound C formed in the Nozaki-Hiyama-Kishi coupling reaction. Show all stereochemistry clearly, particularly at the newly formed chiral centers.",
+            "reaction_scheme": [
+                {
+                    "reactant_name": "A, B",
+                    "reactant_formula": "C=C[C@@H](C)C[C@@H](C)[C@@H](OCC1=CC=C(OC)C=C1)[C@H](OC)C([H])=O, I/C(C)=C/[C@@H](C)[C@@H](OCC1=CC=C(OC)C=C1)CCO[Si](C)(C)C(C)(C)C",
+                    "conditions": "CrCl_{2}, NiCl_{2} (cat.)",
+                    "product_name": "C, C'",
+                    "product_formula": "C_{41}H_{66}O_{7}Si",
+                    "product_ratio": "2:1"
+                },
+                {
+                    "reactant_name": "C",
+                    "conditions": "multiple steps",
+                    "product_name": "D + E",
+                    "product_formula": "[R2]CC([H])=O, O=C1O[C@@H](C2=CC=CC=C2)[C@@H](C)N1C(CC[C@@H]3CC[C@@H](O[Si](C)(C)C(C)(C)C)[C@H](C)C3)=O"
+                },
+                {
+                    "reactant_name": "D + E",
+                    "reactant_formula": "[R2]CC([H])=O, O=C1O[C@@H](C2=CC=CC=C2)[C@@H](C)N1C(CC[C@@H]3CC[C@@H](O[Si](C)(C)C(C)(C)C)[C@H](C)C3)=O",
+                    "conditions": "nBu_{2}BOTf, Et_{3}N",
+                    "product_name": "F"
+                },
+                {
+                    "reactant_name": "F",
+                    "conditions": "multiple steps",
+                    "product_name": "rapamycin",
+                    "product_formula": "C[C@@H]1CCC2C[C@@H](/C(=C/C=C/C=C/[C@H](C[C@H](C(=O)[C@@H]([C@@H](/C(=C/[C@H](C(=O)C[C@H](OC(=O)[C@@H]3CCCCN3C(=O)C(=O)[C@@]1(O2)O)[C@H](C)C[C@@H]4CC[C@H]([C@@H](C4)OC)O)C)/C)O)OC)C)C)/C)OC"
+                }
+            ]
+        },
+        "answer": [
+            {
+                "image": "/images/2/2.1_ans_1.png",
+                "projection_type": "Newman projection",
+                "viewing_direction": "along C(α)-C(carbonyl) bond",
+                "front_carbon": {
+                    "substituents": [
+                        {
+                            "position": "top",
+                            "group": "R^{1}"
+                        },
+                        {
+                            "position": "bottom-left",
+                            "group": "H"
+                        },
+                        {
+                            "position": "bottom-right",
+                            "group": "OMe"
+                        }
+                    ]
+                },
+                "back_carbon": {
+                    "substituents": [
+                        {
+                            "position": "top",
+                            "group": "=O"
+                        },
+                        {
+                            "position": "bottom-left",
+                            "group": "H"
+                        },
+                        {
+                            "position": "bottom-right",
+                            "group": "attacking group (Nu)"
+                        }
+                    ]
+                },
+                "nucleophile_approach": {
+                    "direction": "from bottom-right",
+                    "angle_to_carbonyl": "~107°",
+                    "anti_to": "R^{1}",
+                    "explanation": "Nucleophile approaches anti to the largest group (R¹) following Felkin-Anh model"
+                },
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "If nucleophile approach not shown or incorrect",
+                            "deduction": -2
+                        },
+                        {
+                            "condition": "If chirality at rear carbon is wrong, but OMe placed perpendicular",
+                            "deduction": -4
+                        },
+                        {
+                            "condition": "If chirality at rear carbon is correct, but OMe not placed perpendicular",
+                            "deduction": -4
+                        }
+                    ],
+                    "notes": "Need to use Felkin-Anh model without chelation and put electronegative group OMe perpendicular to aldehyde."
+                },
+                "points": 8
+            },
+            {
+                "name": "C and C'",
+                "image": "/images/2/2.1_ans_2.png",
+                "C_smiles": "C=C[C@@H](C)C[C@@H](C)[C@@H](OCC1=CC=C(OC)C=C1)[C@H](OC)[C@H](O)/C(C)=C/[C@@H](C)[C@@H](OCC2=CC=C(OC)C=C2)CCO[Si](C)(C)C(C)(C)C",
+                "C'_smiles": "C=C[C@@H](C)C[C@@H](C)[C@@H](OCC1=CC=C(OC)C=C1)[C@H](OC)[C@@H](O)/C(C)=C/[C@@H](C)[C@@H](OCC2=CC=C(OC)C=C2)CCO[Si](C)(C)C(C)(C)C",
+                "points": 4,
+                "grading": {
+                    "full_credit": {
+                        "condition": "Structure of C fully correct"
+                    },
+                    "partial_credit": [
+                        {
+                            "condition": "If C' is given instead of C"
+                        },
+                        {
+                            "condition": "Absolute stereochemistry of OH and OMe is correct",
+                            "additional_note": "If incorrect, but the relative stereochemistry is correct",
+                            "additional_points": 1
+                        },
+                        {
+                            "condition": "For each error in each molecule in functional groups not undergoing reaction",
+                            "deduction": -1
+                        }
+                    ],
+                    "notes": "No error carried forward awarded even if part a is incorrect as stereochemistry can be inferred from the final structure of rapamycin. PMBO refers to para-methoxybenzyl ether protecting group, OPMB refers to para-methoxybenzyl group, OTBS refers to tert-butyldimethylsilyl ether protecting group."
+                }
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_2.2",
+        "modality": "image + text",
+        "type": "structure_drawing",
+        "evaluation": "smiles_comparison",
+        "points": 19,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "After a few transformations,  C can be converted into an aldehyde D which reacts with E to form F.  F can be further transformed into rapamycin. Using the Zimmerman-Traxler model, predict the arrangement of the reactants as they come together to form the six-membered ring transition state in the reaction to form F. Draw the substituents at positions labelled with numbers. If a position does not have a substituent, put an X in the box. Boxes 1 and 2 have been filled in as an example. You may use the abbreviation  R^{2} as given in the scheme above. Draw the structure of F showing all stereochemistry. You may use the abbreviation  R^{2} as given in the scheme above.",
+            "image": "/images/2/2.2_ques.png",
+            "requirement": "Using the Zimmerman-Traxler six-membered ring transition state model, fill in the boxes (3-8) to show the arrangement of groups in the transition state that leads to the formation of product F. Draw the structure of compound F with correct stereochemistry, including the newly formed stereocenters from the aldol reaction."
+        },
+        "answer": [
+            {
+                "model": "Six-membered ring Zimmerman-Traxler Model",
+                "transition_state_positions": {
+                    "position_3": {
+                        "group": "Evans auxiliary with Ph and Me groups",
+                        "description": "Phenyl group on nitrogen-containing oxazolidinone auxiliary with Me substituent"
+                    },
+                    "position_4": {
+                        "group": "X",
+                        "description": "Position marker or variable group"
+                    },
+                    "position_5": {
+                        "group": "—H",
+                        "description": "Hydrogen on the enolate carbon"
+                    },
+                    "position_6": {
+                        "group": "Cyclohexyl fragment with OMe and OTBS",
+                        "description": "Six-membered ring with methoxy and tert-butyldimethylsilyl ether substituents"
+                    },
+                    "position_7": {
+                        "group": "R²",
+                        "description": "Alkyl chain from aldehyde (polyene fragment)"
+                    },
+                    "position_8": {
+                        "group": "—H",
+                        "description": "Hydrogen on the aldehyde carbon"
+                    }
+                },
+                "key_features": {
+                    "chair_conformation": "Six-membered ring chair",
+                    "boron_coordination": "Boron center coordinates enolate oxygen and aldehyde oxygen",
+                    "Z_enolate": "Z-configuration of enolate (positions 5/6)",
+                    "aldehyde_orientation": "Aldehyde at back with R² group (position 7/8)"
+                },
+                "points": 15,
+                "grading": {
+                    "full_credit": [
+                        {
+                            "condition": "Aldehyde approach (aldehyde is at the back instead of the front)",
+                            "points": 5
+                        },
+                        {
+                            "condition": "Z enolate (flip 5/6)",
+                            "points": 5
+                        },
+                        {
+                            "condition": "Aldehyde conformation (flip 7/8)",
+                            "points": 5
+                        }
+                    ],
+                    "partial_credit": [
+                        {
+                            "condition": "For swapping positions 3 and 4",
+                            "deduction": -2
+                        },
+                        {
+                            "condition": "For each trivial mistake",
+                            "deduction": -1
+                        }
+                    ]
+                }
+            },
+            {
+                "structure_description": "Aldol product with Evans auxiliary still attached",
+                "key_features": {
+                    "auxiliary": "Phenyl oxazolidinone with Me group remains attached",
+                    "new_stereocenters": "Two newly formed stereocenters from aldol reaction",
+                    "polyene_chain": "R² represents the polyene chain from compound C",
+                    "protected_groups": "OMe and OTBS groups on cyclohexyl fragment",
+                    "hydroxyl_group": "New OH group formed at aldol position"
+                },
+                "smiles": "[Complex structure with Evans auxiliary, new stereocenters, and polyene chain - exact SMILES depends on R² definition]",
+                "points": 4,
+                "grading": {
+                    "full_credit": {
+                        "condition": "Structure of F with stereochemistry fully correct",
+                        "points": 4
+                    },
+                    "partial_credit": [
+                        {
+                            "condition": "Absolute stereochemistry of newly formed stereocenters is correct",
+                            "points": 2,
+                            "additional_note": "If incorrect, but the relative stereochemistry is correct",
+                            "additional_points": 1
+                        },
+                        {
+                            "condition": "For each error of functional groups not undergoing reaction (trivial error)",
+                            "deduction": -1
+                        }
+                    ],
+                    "notes": "No error carried forward awarded even if part 2.2a is incorrect as stereochemistry can be inferred from the final structure of rapamycin."
+                }
+            }
+        ]
+    }
+]

@@ -5,7 +5,7 @@
             "image": "/images/4/4_bg.png",
             "context": "The Dubai Tennis Championships is a prestigious tournament held annually in UAE. Many of the world's top players, including Rafael Nadal, Roger Federer, Novak Djokovic, and Andy Murray have won titles there. The composition of tennis balls has evolved over hundreds of years. To ensure a good bounce, the inside of modern tennis balls is pressurised above atmospheric pressure. However, old hollow tennis balls just contained air at atmospheric pressure. In this problem, assume tennis balls have an inner radius of R = 3.0 cm that remains constant throughout the pressurisation process. Assume that the composition of air is 20% O_{2} and 80% N_{2} by volume. Consider that overpressure does not expand the ball."
         },
-        "total_points": 40
+        "points": 40
     },
     {
         "name": "IChO-2025_4.1",
