@@ -252,5 +252,240 @@
                 }
             }
         ]
+    },
+    {
+        "name": "IChO-2025_2.3",
+        "modality": "image + text",
+        "type": "structure_drawing, filling the reactangles",
+        "evaluation": "smiles_comparison",
+        "points": 18,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Whilst stereochemical control is challenging synthetically, the biological synthesis controls stereochemistry elegantly through an assembly line of various enzymes. The carbon chain is built up through the addition of monomers. These units are connected via a thioester to Coenzyme A (CoA). The functions of the various enzymes and proteins are shown in the table. The first part of the assembly line is shown with blanks. The enzymes are shown in circles and act in the order of the arrow. Draw in the hexagons the structure of the monomer needed by the enzyme AT at each of the points numbered 1-4. Carbon dioxide is released when the monomers are incorporated. The monomers have the following general structure where the R group is anionic. Fill in each circle with the abbreviations of enzyme(s) needed. Write X if no additional enzyme is needed. Complete the rectangles with the structure of the growing molecule attached to the enzyme.",
+            "image": [
+                "/images/2/2.3_ques_1.png",
+                "/images/2/2.3_ques_2.png"
+            ],
+            "requirement": "Identify the building blocks (in hexagons) and the enzymes (in circles) involved in the polyketide synthesis pathway. Also draw the structures (in rectangles) corresponding to each stage of the synthesis.",
+            "table": [
+                {
+                    "Abbreviation": "ACP",
+                    "Name": "Acyl-carrier protein",
+                    "Function": "Carries growing chain between domains"
+                },
+                {
+                    "Abbreviation": "CoL",
+                    "Name": "CoA-Ligase",
+                    "Function": "Activates a carboxylic acid substrate to be loaded onto the ACP"
+                },
+                {
+                    "Abbreviation": "AT",
+                    "Name": "Acyltransferase",
+                    "Function": "Selects monomer and transfers to ACP"
+                },
+                {
+                    "Abbreviation": "KS",
+                    "Name": "Ketosynthase",
+                    "Function": "Accepts growing chain from previous ACP and activates it for Claisen condensation with next monomer-loaded ACP"
+                },
+                {
+                    "Abbreviation": "KR",
+                    "Name": "Ketoreductase",
+                    "Function": "Reduces carbonyl of a previous monomer to a hydroxyl"
+                },
+                {
+                    "Abbreviation": "DH",
+                    "Name": "Dehydratase",
+                    "Function": "Forms α, β-unsaturated thioester via elimination on the previous monomer"
+                },
+                {
+                    "Abbreviation": "ER",
+                    "Name": "Enoylreductase",
+                    "Function": "Reduces α, β-unsaturated thioester to saturated chain on the previous monomer"
+                }
+            ],
+            "answer": {
+                "question_id": "building_blocks_and_enzymes",
+                "answer": {
+                    "building_blocks": {
+                        "hexagon_1": {
+                            "name": "Me Malonyl CoA",
+                            "structure": "Methylmalonyl-CoA",
+                            "smiles": "CC(C(=O)SCoA)C(=O)[O-]",
+                            "points": 1
+                        },
+                        "hexagon_2": {
+                            "name": "Malonyl CoA",
+                            "structure": "Malonyl-CoA",
+                            "smiles": "[O-]C(=O)CC(=O)SCoA",
+                            "points": 1
+                        },
+                        "hexagon_3": {
+                            "name": "Malonyl CoA",
+                            "structure": "Malonyl-CoA (with methyl branch)",
+                            "smiles": "[O-]C(=O)C(C)C(=O)SCoA",
+                            "points": 1
+                        },
+                        "hexagon_4": {
+                            "name": "Malonyl CoA",
+                            "structure": "Malonyl-CoA (with methyl branch)",
+                            "smiles": "[O-]C(=O)C(C)C(=O)SCoA",
+                            "points": 1
+                        }
+                    },
+                    "enzymes": {
+                        "circle_module_1": {
+                            "enzymes": [
+                                "KR",
+                                "DH",
+                                "ER"
+                            ],
+                            "description": "Ketoreductase, Dehydratase, Enoyl reductase",
+                            "points": 2
+                        },
+                        "circle_module_2": {
+                            "enzymes": [
+                                "KR"
+                            ],
+                            "description": "Ketoreductase",
+                            "points": 2
+                        },
+                        "circle_module_3": {
+                            "enzymes": [
+                                "X"
+                            ],
+                            "description": "Unknown or no additional enzyme beyond KS, AT, ACP",
+                            "points": 2
+                        },
+                        "circle_module_4": {
+                            "enzymes": [
+                                "KR",
+                                "DH"
+                            ],
+                            "description": "Ketoreductase, Dehydratase",
+                            "points": 2
+                        }
+                    },
+                    "structures": {
+                        "rectangle_1": {
+                            "description": "Structure after Module 1 processing",
+                            "features": [
+                                "Thioester attached to enzyme (S bond)",
+                                "Fully reduced chain (no ketone)",
+                                "Cyclohexane ring with two OH groups",
+                                "Saturated carbon chain"
+                            ],
+                            "smiles": "CC(C)CC(O)C1CCC(O)C(O)C1",
+                            "stereochemistry": "Shows specific stereochemistry with wedge/dash bonds",
+                            "points": 2
+                        },
+                        "rectangle_2": {
+                            "description": "Structure after Module 2 processing",
+                            "features": [
+                                "Thioester attached to enzyme (S bond)",
+                                "Beta-hydroxy ketone (ketone reduced to OH)",
+                                "Cyclohexane ring with two OH groups",
+                                "Extended carbon chain"
+                            ],
+                            "smiles": "CC(C(=O)CC(O)C)CC1CCC(O)C(O)C1",
+                            "stereochemistry": "Shows specific stereochemistry with wedge/dash bonds",
+                            "points": 2
+                        },
+                        "rectangle_3": {
+                            "description": "Structure after Module 3 processing",
+                            "features": [
+                                "Thioester attached to enzyme (S bond)",
+                                "Beta-keto ester (ketone not reduced)",
+                                "Two carbonyl groups present",
+                                "Two OH groups on cyclohexane ring",
+                                "Further extended carbon chain"
+                            ],
+                            "smiles": "CC(C(=O)CC(=O)C(C)CC(O)C)CC1CCC(O)C(O)C1",
+                            "stereochemistry": "Shows specific stereochemistry with wedge/dash bonds",
+                            "points": 2
+                        },
+                        "rectangle_4": {
+                            "description": "Structure after Module 4 processing",
+                            "features": [
+                                "Thioester attached to enzyme (S bond)",
+                                "Alpha,beta-unsaturated ketone (dehydrated)",
+                                "Double bond present",
+                                "Multiple OH groups",
+                                "Fully extended carbon chain",
+                                "Cyclohexane ring with two OH groups"
+                            ],
+                            "smiles": "CC(C(=O)C=C(C)C(C(=O)CC(=O)C(C)CC(O)C)C)CC1CCC(O)C(O)C1",
+                            "stereochemistry": "Shows specific stereochemistry with wedge/dash bonds",
+                            "points": 2
+                        }
+                    }
+                },
+                "points": {
+                    "total": 18,
+                    "breakdown": {
+                        "hexagons": 4,
+                        "enzymes": 8,
+                        "structures": 8
+                    }
+                },
+                "grading": {
+                    "building_blocks": "Hexagons for building blocks are worth 1 pt each. Total = 4 pts",
+                    "enzymes_and_structures": "Circles for enzymes and rectangles for structures worth 2 pts each. Total 14 pts.",
+                    "partial_credit": "No partial credit for this part. The order of the enzymes in the circles is not graded.",
+                    "error_carried_forward": "Error carried forward can be implemented for the structures in the rectangles."
+                }
+            }
+        }
+    },
+    {
+        "name": "IChO-2025_2.4",
+        "modality": "image + text",
+        "type": "structure_drawing, filling the reactangles",
+        "evaluation": "smiles_comparison",
+        "points": 18,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "The final steps of the enzymatic synthesis are shown below. The building blocks involved were determined by feeding the bacterium with three different ^{13}C -labelled starting materials which are incorporated into the monomers ^{13}C are circled as shown below: Circle the carbons in rapamycin that will be  ^{13}C -labelled when the bacterium is fed with each of the three starting materials a-c in turn, following the guidelines on the next page. Incorrect circles will be penalised but there is no negative scoring. Guidelines for circling carbon atoms: Do not include multiple carbon atoms in the same circle. Do not circle any bonds.",
+            "image": "/images/2/2.4_ques.png",
+            "requirement": "",
+            "reaction_scheme": [
+                {
+                    "reactant_smiles": "O=C(CC([C@H](C)CC[C@H](O)C[C@H](O)/C(C)=C/C=C/C=C/C(C)CC(C)C(C[C@H](O)/C(C)=C/C(C)C(C[C@H](O)[C@H](C)C[C@]1([H])CC[C@@H](O)[C@H](O)C1)=O)=O)=O)S[ACP]",
+                    "conditions": "O=C([C@H]1NCCCC1)O",
+                    "product_formula": "O[C@@]1(C(C(N2[C@]([H])(C(O[C@H]([C@H](C)C[C@@]3([H])C[C@@H](O)[C@H](O)CC3)CC([C@H](C)/C=C(C)/[C@@H](O)C4)=O)=O)CCCC2)=O)=O)O[C@@](C[C@H](O)/C(C)=C/C=C/C=C/[C@@H](C)C[C@@H](C)C4=O)([H])CC[C@H]1C"
+                },
+                {
+                    "reactant_name": "O[C@@]1(C(C(N2[C@]([H])(C(O[C@H]([C@H](C)C[C@@]3([H])C[C@@H](O)[C@H](O)CC3)CC([C@H](C)/C=C(C)/[C@@H](O)C4)=O)=O)CCCC2)=O)=O)O[C@@](C[C@H](O)/C(C)=C/C=C/C=C/[C@@H](C)C[C@@H](C)C4=O)([H])CC[C@H]1C",
+                    "conditions": "multiple steps",
+                    "product_name": "rapamycin",
+                    "product_formula": "C[C@@H]1CCC2C[C@@H](/C(=C/C=C/C=C/[C@H](C[C@H](C(=O)[C@@H]([C@@H](/C(=C/[C@H](C(=O)C[C@H](OC(=O)[C@@H]3CCCCN3C(=O)C(=O)[C@@]1(O2)O)[C@H](C)C[C@@H]4CC[C@H]([C@@H](C4)OC)O)C)/C)O)OC)C)C)/C)OC"
+                }
+            ],
+            "^{13}C-labelled starting materials a": {
+                "smiles": "CCC(O[Na])=O",
+                "notes": "From left to right, C-1 and C-2 are circled."
+            },
+            "^{13}C-labelled starting materials b": {
+                "smiles": "CC(O[Na])=O",
+                "notes": "From left to right, C-2 are circled."
+            },
+            "^{13}C-labelled starting materials c": {
+                "smiles": "CC(O[Na])=O",
+                "notes": "From left to right, C-1 are circled."
+            }
+        },
+        "answer": [
+            {
+                "name": "C-11, C-12, C-23, C-24, C-26, C-27, C-35, C-36, C-41, C-42, C-44, C-45, C-49, C-50"
+            },
+            {
+                "name": "C-3, C-22, C-32, C-37, C-38, C-47, C-49"
+            },
+            {
+                "name": "C-2, C-22, C-30, C-32, C-37, C-38, C-48"
+            }
+        ]
     }
 ]
