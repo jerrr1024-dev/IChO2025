@@ -1,0 +1,243 @@
+[
+    {
+        "name": "IChO-2025_6",
+        "background": {
+            "image": [],
+            "context": "Photochemical reduction of carbon dioxide is a promising approach for solar energy conversion and mitigation of atmospheric CO2. This problem explores direct thermal decomposition, a Zn/ZnO thermochemical cycle, and photocatalytic reduction using semiconductors. Assume reaction enthalpies and entropies are temperature-independent. Data (298 K unless noted): ΔfH° / kJ mol^{-1}: CO2(g) = -393.5, CO(g) = -110.5, Zn(s) = 0, Zn(l) = 6.5, Zn(g) = 130.4, ZnO(s) = -350.5. S° / J mol^{-1} K^{-1}: CO2(g) = 213.8, CO(g) = 197.7, O2(g) = 205.1, Zn(s) = 41.7, Zn(l) = 50.8, Zn(g) = 161.0, ZnO(s) = 43.7. Melting/boiling: Zn melts at 692.7 K and boils at 1180 K; ZnO melts at 2247 K. \n Direct decomposition of  $CO_{2}$  to CO and  $O_{2}$  is a highly endothermic process which requires a large amount of energy - from heat or from light."
+        },
+        "points": 22
+    },
+    {
+        "name": "IChO-2025_6.1",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 5,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Estimate the temperature (K) at which half of CO2 decomposes at equilibrium at a total pressure of 1 bar for CO2 → CO + 1/2 O2."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Extent setup (let n0 be initial CO2): at 50% conversion, n(CO2) = 0.5 n0, n(CO) = 0.5 n0, n(O2) = 0.25 n0, n(total) = 1.25 n0.",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "Mole fractions: x(CO2) = 0.4, x(CO) = 0.4, x(O2) = 0.2. Partial pressures at 1 bar: p(CO2) = 0.4 bar, p(CO) = 0.4 bar, p(O2) = 0.2 bar.",
+                "points": 1
+            },
+            {
+                "step": 3,
+                "content": "Equilibrium constant: K_p = p(CO) p(O2)^{1/2} / p(CO2) = 0.4 × 0.2^{1/2} / 0.4 = 0.447.",
+                "points": 1
+            },
+            {
+                "step": 4,
+                "content": "Thermodynamics at 298 K: ΔrH° = (−110.5 − (−393.5)) kJ mol^{-1} = 283 kJ mol^{-1}. ΔrS° = 197.7 + 0.5 × 205.1 − 213.8 = 86.45 J mol^{-1} K^{-1}.",
+                "points": 1
+            },
+            {
+                "step": 5,
+                "content": "Use ln K_p = −ΔG°/RT = (−ΔrH°/RT) + (ΔrS°/R) ⇒ with K_p = 0.447 obtain T ≈ 3038 K.",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "background": {
+            "context": "The use of metal/metal oxide catalytic systems allows the temperature of  $CO_{2}$  decomposition to be significantly reduced and eases the separation of the gaseous products by using thermochemical cycles. Consider a catalytic cycle based on the Zn/ZnO system and containing two reactions. The net reaction is  $CO_{2}$  decomposition into CO and  $O_{2}$ . Reaction 1 is exothermic, while Reaction 2 is highly endothermic - the reactants should be heated to the required temperature."
+        }
+    },
+    {
+        "name": "IChO-2025_6.2",
+        "modality": "text",
+        "type": "short_answer",
+        "evaluation": "step_points",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Write balanced equations for the Zn/ZnO thermochemical cycle (net CO2 → CO + 1/2 O2). Operating temperature for Reaction 1 is 1073 K."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Reaction 1 (exothermic): Zn + CO2 → ZnO + CO",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "Reaction 2 (endothermic): ZnO → Zn + 1/2 O2",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_6.3",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 3,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "For Reaction 1 at 1073 K (Zn(l) + CO2(g) → ZnO(s) + CO(g)), calculate the equilibrium constant K and the degree of CO2 conversion x."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "ΔrH° = (−350.5 + (−110.5)) − (6.5 + (−393.5)) = −74 kJ mol^{-1}. ΔrS° = (43.7 + 197.7) − (50.8 + 213.8) = −23.2 J mol^{-1} K^{-1}.",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "ΔrG°{1073} = −74 × 10^{3} − (−23.2 × 10^{−3} × 1073) = −49.1 × 10^{3} J mol^{-1}. K = exp(−ΔG°/RT) = exp(49100 / (8.314 × 1073)) ≈ 246.",
+                "points": 1
+            },
+            {
+                "step": 3,
+                "content": "Degree of conversion for CO2: x = K/(K + 1) ≈ 0.996.",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_6.4",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 3,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "For Reaction 2 at 2000 K (ZnO(s) → Zn(g) + 1/2 O2(g)), calculate the equilibrium oxygen pressure p(O2) in bar."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "ΔrH° = 130.4 − (−350.5) = 480.9 kJ mol^{-1}. ΔrS° = 161.0 + 0.5 × 205.1 − 43.7 = 219.85 J mol^{-1} K^{-1}.",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "ΔrG°{2000} = 480.9 × 10^{3} − 219.85 × 10^{−3} × 2000 = 41.2 × 10^{3} J mol^{-1}. K_p = exp(−ΔG°/RT) = exp(−41200/(8.314×2000)) ≈ 0.084.",
+                "points": 1
+            },
+            {
+                "step": 3,
+                "content": "For ZnO ⇌ Zn(g) + 1/2 O2(g): K_p = p(Zn) p(O2)^{1/2}. With stoichiometry p(Zn) = p(O2)^{1/2}, K_p = 2 p(O2)^{3/2}. Solve p(O2) ≈ 0.12 bar.",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "background": {
+            "context": "Photocatalytic reduction of  $CO_{2}$  with water is akin to natural photosynthesis. Plants convert  $CO_{2}$  to carbohydrates as an energy source, but human civilisation needs hydrocarbons to produce energy. On the way from  $CO_{2}$  to  $C_{x}H_{y}$  there are many possible intermediate products of  $CO_{2}$  reduction."
+        }
+    },
+    {
+        "name": "IChO-2025_6.5",
+        "modality": "text",
+        "type": "fill_in",
+        "evaluation": "step_points",
+        "points": 3,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Complete the one-carbon species table for CO2 reduction (only H and/or O with one C). Columns: +3, +2 (anion), +2 (neutral molecule), 0, −2, −4. Put exactly one valid example in each box."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "+3: CO2− or HCO2− or CO+",
+                "points": 0.5
+            },
+            {
+                "step": 2,
+                "content": "+2 (anion): HCOO− or CO2^{2−}",
+                "points": 0.5
+            },
+            {
+                "step": 3,
+                "content": "+2 (neutral molecule): CO or HCOOH",
+                "points": 0.5
+            },
+            {
+                "step": 4,
+                "content": "0: CH2O or CH2(OH)2",
+                "points": 0.5
+            },
+            {
+                "step": 5,
+                "content": "−2: CH3OH or CH3O− or CH3+",
+                "points": 0.5
+            },
+            {
+                "step": 6,
+                "content": "−4: CH4",
+                "points": 0.5
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_6.6",
+        "modality": "text",
+        "type": "selection_with_work",
+        "evaluation": "step_points",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Visible light range 400–700 nm. Semiconductor band gaps (eV): CdS 2.4, Ge 0.67, Si 1.1, SiC 3.2, WO3 2.8, ZrO2 5.0. Choose which can be excited by visible light and support with a calculation."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Use shortest visible wavelength λ = 400 nm. Photon energy E = hc/(λ × 1.602×10^{-19}) = 3.10 eV. Materials with band gap < 3.10 eV are excitable by visible light.",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "Choices: CdS, Ge, Si, WO3 (all < 3.10 eV). SiC and ZrO2 are not excitable (3.2 eV and 5.0 eV).",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_6.7",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 4,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Early photocatalysis test: SiC in V = 100 mL water; CO2 bubbled at ν = 3.0 L min^{-1} (T = 25 °C, p = 1 atm) for t = 7 h. Lamp P = 500 W, λ = 365 nm. After irradiation: c(HCHO) = 1.0×10^{-3} M, c(CH3OH) = 5.4×10^{-3} M. Define degree of CO2 conversion η = (n(HCHO)+n(CH3OH))/n(CO2). Apparent quantum yield ϕ = N_e / N_i with 4 electrons for HCHO and 6 for CH3OH."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Moles of CO2 delivered (assume ideal gas): n(CO2) = pV/RT = 101325 Pa × (3.0 L min^{-1} × 420 min) / (8.314 × 298) = 51.5 mol.",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "Degree of conversion: η = (1.0×10^{-3} + 5.4×10^{-3}) mol L^{-1} × 0.100 L / 51.5 mol = 1.2×10^{-5}.",
+                "points": 1
+            },
+            {
+                "step": 3,
+                "content": "Moles of incident photons: n(hν) = Pt / (hc N_A / λ) = 500 W × 7 × 3600 s × 365×10^{-9} m / (6.626×10^{-34} J s × 2.998×10^{8} m s^{-1} × 6.022×10^{23}) = 38.4 mol.",
+                "points": 1
+            },
+            {
+                "step": 4,
+                "content": "Apparent quantum yield: ϕ = (4 n(HCHO) + 6 n(CH3OH)) / n(hν) = (4×1.0×10^{-4} + 6×5.4×10^{-4}) / 38.4 = 9.5×10^{-5}.",
+                "points": 1
+            }
+        ]
+    }
+]

@@ -1,0 +1,348 @@
+[
+    {
+        "name": "IChO-2025_7",
+        "background": {
+            "context": "The petroleum industry plays an important role in the UAE economy. The oil called 'Dubai Crude' is a benchmark for global oil prices. Crude oil is a complex mixture of organic compounds, mainly hydrocarbons, along with smaller amounts of S, N, and O-containing compounds.\n\nThe hydrocarbon composition of oil is characterised by the PONA number. The abbreviation stands for $P$ - paraffins (alkanes), $O$ - olefins (alkenes), $N$ - naphthenes (cycloalkanes), and $A$ - aromatics (arenes). One method to determine the composition of oil is gas chromatography–mass spectrometry (GC–MS)."
+        },
+        "points": 22
+    },
+    {
+        "name": "IChO-2025_7.1",
+        "modality": "image + text",
+        "type": "structure_drawing",
+        "evaluation": "step_points",
+        "points": 8,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Below are mass spectra (electron impact ionisation, $I$ – relative intensity) of four hydrocarbons 1–4 of Dubai Crude oil. They include linear alkane P, linear alkene O (no cis–trans isomers), monosubstituted cycloalkane N, and arene A. 1'–4' are selected fragmentation products. Give the SMILES string** for each compound (1–4) and each main fragment (1'–4'). If you cannot determine 1–4, write letter code (P/O/N/A) and molecular formula. Hint: species $3'$ is formed by a McLafferty rearrangement.",
+            "requirement": "Your response should list SMILES for 1, 2, 3, 4, 1', 2', 3', and 4'.",
+            "images": [
+                "images/7/7.1_1.png",
+                "images/7/7.1_2.png",
+                "images/7/7.1_3.png",
+                "images/7/7.1_4.png"
+            ]
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "1 = ethylcyclohexane, SMILES: CCC1CCCCC1, class N, formula C8H16",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "2 = n-octane, SMILES: CCCCCCCC, class P, formula C8H18",
+                "points": 1
+            },
+            {
+                "step": 3,
+                "content": "3 = 1-octene, SMILES: C=CCCCCCC, class O, formula C8H16",
+                "points": 1
+            },
+            {
+                "step": 4,
+                "content": "4 = ethylbenzene, SMILES: CCC1=CC=CC=C1, class A, formula C8H10",
+                "points": 1
+            },
+            {
+                "step": 5,
+                "content": "1' = cyclohexyl cation fragment, SMILES: C1CCC[CH+]C1, formula C6H11+",
+                "points": 1
+            },
+            {
+                "step": 6,
+                "content": "2' = propyl or isopropyl cation, SMILES: CC[CH2+], formula C3H7+",
+                "alternative_smiles": "C[CH+]C",
+                "points": 1
+            },
+            {
+                "step": 7,
+                "content": "3' = allylic McLafferty fragment from oct-1-ene, SMILES: [CH2CHCHCH2]+, formula C4H7+",
+                "points": 1
+            },
+            {
+                "step": 8,
+                "content": "4' = benzyl/tropylium cation, SMILES: [CH2+]C1=CC=CC=C1, formula C7H7+",
+                "alternative_smiles": "C1=CC=CC=C[CH+]1",
+                "points": 1
+            }
+        ],
+        "grading": {
+            "criteria": {
+                "for_compounds_1_to_4": {
+                    "full": "1 pt per correct SMILES match.",
+                    "partial": [
+                        {
+                            "condition": "SMILES incorrect but molecular formula correct.",
+                            "points": 0.25
+                        },
+                        {
+                            "condition": "Compound belongs to the same P/O/N/A class.",
+                            "points": 0.25
+                        },
+                        {
+                            "condition": "No SMILES provided but molecular formula given.",
+                            "points": 0.25
+                        },
+                        {
+                            "condition": "Only the correct class letter (P/O/N/A) provided.",
+                            "points": 0.25
+                        }
+                    ]
+                },
+                "for_fragments_1prime_to_4prime": {
+                    "full": "1 pt per correct SMILES fragment (including ion).",
+                    "partial": [
+                        {
+                            "condition": "SMILES incorrect but molecular formula correct.",
+                            "points": 0.25
+                        },
+                        {
+                            "condition": "Charge (“+” or “·+”) is explicitly indicated even if structure incorrect.",
+                            "points": 0.25
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "name": "IChO-2025_7.2",
+        "modality": "image + text",
+        "type": "structure_drawing",
+        "evaluation": "step_points",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Two mass spectra of branched alkanes 5 and 6 are shown. Give the SMILES of 5 and 6.",
+            "images": [
+                "images/7/7.2_5.png",
+                "images/7/7.2_6.png"
+            ]
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "5 = 2-methylbutane (isopentane). SMILES: CC(CC)C",
+                "formula": "C5H12",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "6 = 2,2-dimethylpropane (neopentane). SMILES: CC(C)(C)C",
+                "formula": "C5H12",
+                "points": 1
+            }
+        ],
+        "grading": {
+            "per_compound": {
+                "5": {
+                    "full_credit": "1 pt for correct SMILES (any valid equivalent).",
+                    "partial_credit": [
+                        {
+                            "condition": "Only the correct molecular formula (C5H12) is given.",
+                            "points": 0.5
+                        }
+                    ]
+                },
+                "6": {
+                    "full_credit": "1 pt for correct SMILES (any valid equivalent).",
+                    "partial_credit": [
+                        {
+                            "condition": "Gives 2,2,3,3-tetramethylbutane instead of 2,2-dimethylpropane.",
+                            "points": 0.5
+                        },
+                        {
+                            "condition": "Only the correct molecular formula (C5H12) is given.",
+                            "points": 0.5
+                        }
+                    ]
+                }
+            },
+            "special_case": "If the two structures (5 and 6) are swapped, award a TOTAL of 1 pt."
+        }
+    },
+    {
+        "name": "IChO-2025_7.3",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 3,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "A $V = 115\\,\\mu\\mathrm{L}$ sample of Dubai Crude (density $\\rho = 871\\,\\mathrm{g\\,dm^{-3}}$) is completely burnt. The gases are passed through $\\mathrm{H_2O_2}$ with excess $\\mathrm{Ba(OH)_2}$ to form a white precipitate of mass $m = 1.395\\,\\mathrm{g}$. Upon acidification with $\\mathrm{HNO_3}$ the precipitate mass decreases by $98.95\\%$. Calculate the sulfur content $w(\\mathrm{S})$ (wt%)."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Only $\\mathrm{BaSO_4}$ remains after acidification. $n(\\mathrm{BaSO_4}) = (1 - 0.9895) \\times \\frac{1.395\\,\\mathrm{g}}{233.39\\,\\mathrm{g\\,mol^{-1}}} = 6.276 \\times 10^{-5}\\,\\mathrm{mol}$, hence $n(\\mathrm{S}) = 6.276 \\times 10^{-5}\\,\\mathrm{mol}$.",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "Mass of S in sample: $m(\\mathrm{S}) = n \\cdot M(\\mathrm{S}) = 6.276 \\times 10^{-5}\\,\\mathrm{mol} \\times 32.06\\,\\mathrm{g\\,mol^{-1}} = 2.01 \\times 10^{-3}\\,\\mathrm{g}$.",
+                "points": 1
+            },
+            {
+                "step": 3,
+                "content": "Sample mass: $m_{\\text{sample}} = 115 \\times 10^{-6}\\,\\mathrm{dm^3} \\times 871\\,\\mathrm{g\\,dm^{-3}} = 0.100\\,\\mathrm{g}$. Therefore $w(\\mathrm{S}) = 2.01\\%$ (sour oil).",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_7.4",
+        "modality": "multiple choice",
+        "type": "single_choice",
+        "evaluation": "exact_match",
+        "points": 1,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "In addition to sulfur, crude oil contains trace amounts of selenium, which transfers into the water used during refining. In aqueous solutions, selenium exists as $\\mathrm{SeO_3^{2-}}$ and $\\mathrm{SeO_4^{2-}}$. The concentration of $\\mathrm{SeO_3^{2-}}$ can be determined chromatographically by its selective reaction with diamine **X** under acidic conditions, forming piazoselenol **Y**. This reaction is complete only at the right pH range. X and Y elute at different times (t) on the chromatogram shown below. The absorption spectra (1 mAbs corresponds to absorbance  $A = 0.001$ ) of X and Y are also provided.",
+            "images": [
+                "images/7/7.4_1.png",
+                "images/7/7.4_1.png"
+            ],
+            "reaction_scheme": {
+                "reactions": [
+                    {
+                        "reactant_name": "X",
+                        "reactant_smiles": "NC1=CC=C(N)C(N)=C1",
+                        "conditions": [
+                            {
+                                "step": 1,
+                                "reagents": [
+                                    "H2SeO3",
+                                    "H+"
+                                ]
+                            }
+                        ],
+                        "product_name": "Y",
+                        "product_smiles": "O=[N+](C1=CC2=N[Se]N=C2C=C1)[O-]"
+                    }
+                ]
+            },
+            "question_text": "Choose the optimal wavelength $(\\lambda)$ for the absorbance measurements in the chromatogram.",
+            "options": {
+                "A": "270 nm",
+                "B": "300 nm",
+                "C": "350 nm",
+                "D": "510 nm"
+            }
+        },
+        "answer": [
+            {
+                "correct_option": "C",
+                "content": "The optimal wavelength for absorbance measurements is **350 nm**, as both X and Y absorb the most light at this wavelength.",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_7.5",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 8,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Acidified water from the refining process, containing $\\mathrm{SeO_3^{2-}}$ and $\\mathrm{SeO_4^{2-}}$ (solution 1), was analysed as follows. A $9.50~\\mathrm{mL}$ sample was mixed with $0.50~\\mathrm{mL}$ of an aqueous solution of X ($300~\\mu\\mathrm{M}$, excess) to form solution 2. The chromatographic peak areas (S) were measured for compounds X and Y, which are proportional to their concentrations. For a blank sample, $S(X) = 0.825$ mAbs·min. For known $\\mathrm{SeO_3^{2-}}$ concentrations, $S(Y) = 1.21 \\times c(\\mathrm{Se})$ (in µM). The ratios $S(X)/S(Y)$ measured at different pH values for four strong acids are given below (assume equilibrium):",
+            "table": {
+                "headers": [
+                    "pH",
+                    "HNO3",
+                    "HCl",
+                    "HBr",
+                    "HI"
+                ],
+                "rows": [
+                    [
+                        "3.0",
+                        "1.523",
+                        "0.634",
+                        "0.523",
+                        "1.722"
+                    ],
+                    [
+                        "2.0",
+                        "3.334",
+                        "0.538",
+                        "0.377",
+                        "2.223"
+                    ],
+                    [
+                        "1.5",
+                        "5.454",
+                        "0.523",
+                        "0.368",
+                        "5.114"
+                    ],
+                    [
+                        "1.0",
+                        "7.783",
+                        "0.523",
+                        "0.368",
+                        "8.123"
+                    ],
+                    [
+                        "0",
+                        "10.232",
+                        "0.581",
+                        "0.399",
+                        "11.736"
+                    ],
+                    [
+                        "-0.50",
+                        "13.450",
+                        "0.782",
+                        "0.546",
+                        "15.780"
+                    ]
+                ]
+            },
+            "question_text": "Calculate the concentrations of selenium species ($c_{0}(\\mathrm{SeO_3^{2-}})$, $c_{0}(\\mathrm{SeO_4^{2-}})$ in µM) in solution 1."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "At high [H+] (HNO3), $\\mathrm{SeO_3^{2-}}$ is oxidised to $\\mathrm{SeO_4^{2-}}$, leading to a high $S(X)/S(Y)$ ratio (minimal formation of Y). Conversely, HI reduces $\\mathrm{SeO_3^{2-}}$ and $\\mathrm{SeO_4^{2-}}$ to Se, again giving high ratios. HCl and HBr give optimal conditions (1 pt).",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "From the blank: $S(X) = 0.825$ mAbs·min for $c(X) = 15.0~\\mu\\mathrm{M}$ (since $300~\\mu\\mathrm{M} \\times 0.50~\\mathrm{mL} / (9.50 + 0.50)~\\mathrm{mL} = 15.0~\\mu\\mathrm{M}$). Therefore, the proportionality constant $k = 0.825 / 15.0 = 0.0550~\\mathrm{mAbs·min·\\mu M^{-1}}$ (1 pt).",
+                "points": 1
+            },
+            {
+                "step": 3,
+                "content": "For HCl medium: total Se species $= 15.0~\\mu\\mathrm{M}$.\n$$[X]_{\\mathrm{HCl}} + [\\mathrm{SeO_3^{2-}}] = 15.0$$\n$$0.523 = 0.0550 [X]_{\\mathrm{HCl}} / (1.21 [\\mathrm{SeO_3^{2-}}])$$ (1 pt)",
+                "points": 1
+            },
+            {
+                "step": 4,
+                "content": "For HBr medium, both $\\mathrm{SeO_3^{2-}}$ and $\\mathrm{SeO_4^{2-}}$ are present:\n$$[X]_{\\mathrm{HBr}} + [\\mathrm{SeO_3^{2-}}] + [\\mathrm{SeO_4^{2-}}] = 15.0$$\n$$0.368 = 0.0550 [X]_{\\mathrm{HBr}} / (1.21([\\mathrm{SeO_3^{2-}}] + [\\mathrm{SeO_4^{2-}}]))$$ (1 pt)",
+                "points": 1
+            },
+            {
+                "step": 5,
+                "content": "Solving these simultaneous equations:\n$$[\\mathrm{SeO_3^{2-}}] = 1.20~\\mu\\mathrm{M}, \\quad [\\mathrm{SeO_4^{2-}}] = 0.45~\\mu\\mathrm{M}.$$ (1 pt)",
+                "points": 1
+            },
+            {
+                "step": 6,
+                "content": "Before dilution correction:\n$$c(\\mathrm{SeO_3^{2-}})_0 = 1.20~\\mu\\mathrm{M} \\times 10~\\mathrm{mL}/9.5~\\mathrm{mL} = 1.26~\\mu\\mathrm{M},$$\n$$c(\\mathrm{SeO_4^{2-}})_0 = 0.45~\\mu\\mathrm{M} \\times 10~\\mathrm{mL}/9.5~\\mathrm{mL} = 0.47~\\mu\\mathrm{M}.$$ (1 pt)",
+                "points": 1
+            },
+            {
+                "step": 7,
+                "content": "Final result: $c_0(\\mathrm{SeO_3^{2-}}) = 1.26~\\mu\\mathrm{M}$, $c_0(\\mathrm{SeO_4^{2-}}) = 0.47~\\mu\\mathrm{M}$.",
+                "points": 2
+            }
+        ]
+    }
+]

@@ -1,0 +1,266 @@
+[
+    {
+        "name": "IChO-2025_5",
+        "background": {
+            "image": [
+                "images/5/5_bg.png"
+            ],
+            "context": "Freshwater is scarce in the arid climate of the UAE. The country relies on solar-powered desalination plants to produce freshwater. A Dubai desalination plant uses a multi-stage flash (MSF) desalination process. In MSF desalination, seawater is heated by passing through a series of heat exchangers to raise its temperature, reaching its saturation temperature at a high pressure. When pressure is reduced, this superheated seawater gives off pure water vapour to become saturated again, a process known as flashing.\n Assume seawater in Dubai is at  T_{0} = 25.00^{\\circ}\\mathrm{C}  and is an aqueous solution of  3.45\\%  mass NaCl. Assume complete ionisation of NaCl in water. The boiling point of seawater is higher than pure water. The boiling point elevation constant,  K_{\\mathrm{b}} = 0.5120 \\, \\mathrm{K} \\, \\mathrm{kg} \\, \\mathrm{mol}^{-1}"
+        },
+        "points": 16
+    },
+    {
+        "name": "IChO-2025_5.1",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Calculate the boiling point T (in °C) of Dubai seawater at atmospheric pressure. If you cannot calculate it, use 373.50 K for later parts."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "For 100 g solution: m(NaCl) = 3.45 g; m(H2O) = 96.55 g. M(NaCl) = 58.44 g mol^{-1}.",
+                "points": 0.5
+            },
+            {
+                "step": 2,
+                "content": "Molality: m = (3.45/58.44) / 0.09655 = 0.6114 mol kg^{-1}.",
+                "points": 0.5
+            },
+            {
+                "step": 3,
+                "content": "Assuming complete ionisation (i = 2): ΔT_b = i K_b m = 2 * 0.512 * 0.6114 = 0.6261 K.",
+                "points": 0.5
+            },
+            {
+                "step": 4,
+                "content": "Boiling point: T = 373.15 + 0.6261 = 373.7761 K = 100.6261 °C.",
+                "points": 0.5
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_5.2",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "A solution boils at T_b = 378.00 K. Fully ionised NaCl; K_b = 0.5120 K kg mol^{-1}. Find mass percent of NaCl, w_NaCl.",
+            "requirement": "Use ΔT_b = i K_b m with i = 2, then solve for x g NaCl in 100 g total."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "ΔT_b = 378.00 − 373.15 = 4.85 K.",
+                "points": 0.5
+            },
+            {
+                "step": 2,
+                "content": "Molality: m = ΔT_b / (i K_b) = 4.85 / (2 × 0.512) = 4.736 mol kg^{-1}.",
+                "points": 0.5
+            },
+            {
+                "step": 3,
+                "content": "Let 100 g total: x g NaCl, (100−x) g H2O. m = (x/58.44) / ((100−x)/1000) ⇒ x ≈ 21.7 g.",
+                "points": 1.0
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_5.3",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 3,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Find the boiling point T (°C) of the initial Dubai seawater at p = 2.50 atm. Use ΔH_vap = 40.716 kJ mol^{-1}.",
+            "requirement": "Use Clausius–Clapeyron with T1 = 373.7761 K (from 5.1) at P1 = 1 atm: ln(P2/P1) = −ΔH_vap/R (1/T2 − 1/T1)."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Values: T1 = 373.7761 K; P1 = 1.0 atm; P2 = 2.50 atm; ΔH_vap = 40.716 kJ mol^{-1}.",
+                "points": 0.5
+            },
+            {
+                "step": 2,
+                "content": "ln(2.5/1.0) = −(40716 J mol^{-1})/(8.314 J K^{-1} mol^{-1}) × (1/T2 − 1/373.7761).",
+                "points": 1.0
+            },
+            {
+                "step": 3,
+                "content": "Solve ⇒ T2 = 401.88 K = 128.73 °C.",
+                "points": 1.5
+            }
+        ]
+    },
+    {
+        "background": {
+            "context": "In the plant, a flash chamber (of volume, $V = 100$ L) contains a mass of $1.00$ kg of seawater (l) at $T_{1} = 90.0^{\\circ}$C. Another mass of $1.00\\,\\mathrm{kg}$ of seawater is then overheated to $T_{2} = 110.0^{\\circ}\\mathrm{C}$ at high pressure before being added to this chamber, where a reduction in pressure causes some water to turn into steam. After equilibrium was established, the temperature in the chamber was $T_{\\mathrm{f}} = 97.0^{\\circ}\\mathrm{C}$. Assume there was no loss of energy, and that the latent heat of vaporisation is independent of temperature. The specific heat capacity of seawater, $C_{\\mathrm{p}} = 3.85\\,\\mathrm{kJ}\\,\\mathrm{kg}^{-1}\\,\\mathrm{K}^{-1}$, is assumed to be independent of temperature. The density of seawater, $d = 1025\\,\\mathrm{kg}\\,\\mathrm{m}^{-3}$."
+        }
+    },
+    {
+        "name": "IChO-2025_5.4",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Two 1.00 kg seawater portions at 110 °C and 90 °C are mixed in a 100 L chamber; equilibrium T_f = 97 °C. Find moles of water vapourised, n. Assume no heat loss; Cp(seawater)=3.85 kJ kg^{-1} K^{-1}; E_vap=2260 kJ kg^{-1}; vapour Cp negligible.",
+            "requirement": "Set heat lost on cooling equal to latent heat of vaporisation."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Let n be moles vaporised; mass vaporised = 0.018016 n kg.",
+                "points": 0.5
+            },
+            {
+                "step": 2,
+                "content": "Heat lost on cooling: Q_c = (2 − 0.018016 n) kg × 3850 J kg^{-1} K^{-1} × (373.15 − 370.15) K ≈ 23100 − 208.0848 n J mol^{-1}.",
+                "points": 0.5
+            },
+            {
+                "step": 3,
+                "content": "Heat to vaporise: Q_v = (0.018016 n) kg × 2260×10^3 J kg^{-1} = 40716.16 n J.",
+                "points": 0.5
+            },
+            {
+                "step": 4,
+                "content": "Energy balance Q_c = Q_v ⇒ 23100 = 40924.24 n ⇒ n = 0.565 mol.",
+                "points": 0.5
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_5.5",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "A 100 L chamber initially at 90 °C contains vapour at p_i = 0.690 atm above ~1 L liquid. After adding overheated water and flashing, n_vap from 5.4 is produced and the final temperature is 97 °C. Find final vapour pressure p_f (atm), assuming ideal gas.",
+            "requirement": "Use V_vap ≈ 0.099 m^3; pV = nRT."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Initial vapour moles: n_0 = p_i V / (R T) = (0.690×101325 Pa × 0.099 m^3) / (8.314 J K^{-1} mol^{-1} × 363.15 K) = 2.292 mol.",
+                "points": 1.0
+            },
+            {
+                "step": 2,
+                "content": "After flashing: n = n_0 + n_vap = 2.292 + 0.565 = 2.857 mol.",
+                "points": 0.5
+            },
+            {
+                "step": 3,
+                "content": "Final pressure: p_f = nRT/V = (2.857 mol × 8.314 × 370.15 K) / 0.099 m^3 = 8.9716×10^4 Pa = 0.885 atm.",
+                "points": 0.5
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_5.6",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Find the thermal energy E (kWh) to heat 1.00 kg seawater from 25.0 °C to 110.0 °C. Cp = 3.85 kJ kg^{-1} K^{-1}.",
+            "requirement": "Compute Q = m C_p ΔT and convert kJ to kWh (1 kWh = 3600 kJ)."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "ΔT = 110 − 25 = 85 °C.",
+                "points": 0.5
+            },
+            {
+                "step": 2,
+                "content": "Q = 1.00 kg × 3.85 kJ kg^{-1} K^{-1} × 85 K = 327.25 kJ.",
+                "points": 1.0
+            },
+            {
+                "step": 3,
+                "content": "E = 327.25/3600 = 0.0909 kWh.",
+                "points": 0.5
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_5.7",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 1,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "The plant makes 50,000 m^3 pure water per day and extracts 85% of water from feed. Find daily mass of Dubai seawater required (kg). Assume ρ = 1000 kg m^{-3} for water and seawater contains 3.45% NaCl by mass.",
+            "requirement": "Account for extraction efficiency and water fraction in seawater (0.9655)."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Mass of pure water needed in feed: 50,000 m^3 × 1000 kg m^{-3} / 0.85 = 5.88 × 10^7 kg.",
+                "points": 0.5
+            },
+            {
+                "step": 2,
+                "content": "Mass of seawater required: (5.88 × 10^7 kg)/0.9655 = 6.09 × 10^7 kg.",
+                "points": 0.5
+            }
+        ]
+    },
+    {
+        "background": {
+            "context": "Plants make efficient use of heat exchangers to save energy. We can assume the total energy required by the plant is the same as the energy needed to heat all the seawater from  T_{1} = 25.0^{\\circ}\\mathrm{C}  to  T_{2} = 110.0^{\\circ}\\mathrm{C}."
+        }
+    },
+    {
+        "name": "IChO-2025_5.8",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Assume the plant's net energy equals heating all seawater from 25.0 °C to 110.0 °C (use result of 5.6 per kg). A 10 m^2 solar panel supplies 2.00 kW averaged over 12 h per day and system efficiency is 67%. Find number of panels N.",
+            "requirement": "Use mass from 5.7 and E_per_kg = 0.0909 kWh."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Total energy required: E_req = (6.09 × 10^7 kg) × 0.0909 kWh = 5.536 × 10^6 kWh.",
+                "points": 0.5
+            },
+            {
+                "step": 2,
+                "content": "Accounting for 67% efficiency: E_need_from_panels = 5.536 × 10^6 / 0.67 = 8.263 × 10^6 kWh.",
+                "points": 0.75
+            },
+            {
+                "step": 3,
+                "content": "Energy per panel per day: 2.00 kW × 12 h = 24 kWh. Panels needed: N = (8.263 × 10^6) / 24 = 3.44292 × 10^5 ≈ 344,292.",
+                "points": 0.75
+            }
+        ]
+    }
+]
