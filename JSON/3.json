@@ -1,0 +1,616 @@
+[
+    {
+        "name": "IChO-2025_3",
+        "background": {
+            "image": [
+                "images/3/3_bg.png",
+                "images/3/3_bg_2.png"
+            ],
+            "context": "At 829.8 m, Dubai's Burj Khalifa is the world's tallest structure. To simplify construction, many floors were made from similar pieces. Some artificial \"molecular skyscrapers\" can be made through coordination chemistry of just two pieces: metal ions and organic ligands.\n\nIn these 3D structures, every vertex contains a square planar Pd(II) ion coordinated to four pyridine ligands. Along each edge is a bent organic ligand consisting of two pyridines linked together.\n\nThe angle between the two N->Pd bonds from the same ligand controls which structure forms. Larger angles give larger structures. Where free rotation around a bond is possible, the ligand adopts a conformation to form a structure with the smallest possible angle."
+        },
+        "points": 111
+    },
+    {
+        "name": "IChO-2025_3.1",
+        "modality": "image + text",
+        "type": "choice",
+        "evaluation": "checking",
+        "points": 6,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Each ligand (A, B, and C) can adopt a specific minimum N->Pd angle when coordinating to Pd(II). Possible angle options are: 0°, 30°, 45°, 60°, 90°, 120°, 135°, and 180°. Choose the smallest achievable angle for each ligand.",
+            "image": "images/3/3.1_question.png",
+            "parsing_note": "The option images have been converted into ligands.",
+            "ligands": [
+                {
+                    "name": "A",
+                    "smiles": "c1(C#Cc2ccncc2)ccncc1"
+                },
+                {
+                    "name": "B",
+                    "smiles": "C1(C2=CC(C3=CC=NC=C3)=CC=C2)=CC=NC=C1"
+                },
+                {
+                    "name": "C",
+                    "smiles": "C1(C2=CC=CC(C3=CC=CC(C4=CC=NC=C4)=C3)=C2)=CC(C5=CC=NC=C5)=CC=C1"
+                }
+            ],
+            "options": [
+                "0°",
+                "30°",
+                "45°",
+                "60°",
+                "90°",
+                "120°",
+                "135°",
+                "180°"
+            ],
+            "requirement": "Select one angle value from the list above for each ligand (A, B, and C) that represents its smallest achievable N->Pd angle."
+        },
+        "answer": {
+            "context": {
+                "A": "180°",
+                "B": "120°",
+                "C": "0°"
+            },
+            "grading": {
+                "notes": "6 points total (2 points for each correct ligand–angle pair). No points awarded if more than one angle is selected for any ligand."
+            }
+        }
+    },
+    {
+        "name": "IChO-2025_3.2",
+        "modality": "image + text",
+        "type": "ordering",
+        "evaluation": "text_checking",
+        "points": 4,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Using '<', rank ligands D, E, and F from smallest to largest angle between the N->Pd bonds that they could form.",
+            "image": "images/3/3.2_question.png",
+            "parsing_note": "The option images have been converted into ligands.",
+            "ligands": [
+                {
+                    "name": "D",
+                    "smiles": "C1(C2=CC=C(S2)C3=CC=NC=C3)=CC=NC=C1"
+                },
+                {
+                    "name": "E",
+                    "smiles": "C1(C2=CC=C([Se]2)C3=CC=NC=C3)=CC=NC=C1"
+                },
+                {
+                    "name": "F",
+                    "smiles": "C1(C2=CC=C(O2)C3=CC=NC=C3)=CC=NC=C1"
+                }
+            ],
+            "requirement": "Output format example: D < E < F."
+        },
+        "answer": {
+            "text": "F < D < E",
+            "grading": {
+                "notes": "4 points total. 2 points awarded if the exact reverse order (E < D < F) is given."
+            }
+        }
+    },
+    {
+        "background": {
+            "image": [
+                "images/3/3.3_context_1.png",
+                "images/3/3.3_context_2.png",
+                "images/3/3.3_context_3.png"
+            ],
+            "context": "One series of structures can be modelled as polyhedra with tetracoordinated  \\mathrm{Pd(II)}  ions at the vertices. All structures have eight triangular faces  (F_{3}) , with various numbers of square faces  (F_{4}).\n\nThe triangular and square faces can be placed onto a square grid, where the relative position of two nearest triangles is described with integer coordinates  h  and  k .  Q  is then given by the equation:\nQ = h^{2} + k^{2}\n\nPart of the grid for a structure with  h = 2  and  k = 4  is shown below.\nQ = h^{2} + k^{2} = 20\n\nThe smallest possible structure in this series is an octahedron, where  Q = 1 , and  (h, k) = (0, 1)  or  (1, 0) . It has six vertices, eight triangular faces, and 12 edges. Nearest triangles are a move of one face in one direction apart.\nQ = h^{2} + k^{2} = 1\n\nThe second smallest structure is a cuboctahedron, where  Q = 2 . Nearest triangles are a move of one face in each direction apart."
+        }
+    },
+    {
+        "name": "IChO-2025_3.3",
+        "modality": "text",
+        "type": "table_completion",
+        "evaluation": "text_checking",
+        "points": 4,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Complete the column in the table for Q = 2, describing the number of vertices (V), number of edges (E), the total number of faces (F), and the number of square faces (F4).",
+            "requirement": "All structures follow these geometric relationships:\n1. V - E + F = 2\n 2. V = 6Q\n 3. F-V = 2",
+            "table": {
+                "headers": [
+                    "",
+                    "Q = 1",
+                    "Q = 2"
+                ],
+                "rows": [
+                    [
+                        "(h, k)",
+                        "(0, 1) or (1, 0)",
+                        "(1, 1)"
+                    ],
+                    [
+                        "V",
+                        "6",
+                        ""
+                    ],
+                    [
+                        "E",
+                        "12",
+                        ""
+                    ],
+                    [
+                        "F",
+                        "8",
+                        ""
+                    ],
+                    [
+                        "F3",
+                        "8",
+                        "8"
+                    ],
+                    [
+                        "F4",
+                        "0",
+                        ""
+                    ]
+                ]
+            }
+        },
+        "answer": {
+            "context": "Values for the structure with Q = 2 (cuboctahedron).",
+            "table": {
+                "headers": [
+                    "Parameter",
+                    "Q = 2 Value"
+                ],
+                "rows": [
+                    [
+                        "(h, k)",
+                        "(1, 1)"
+                    ],
+                    [
+                        "V",
+                        "12"
+                    ],
+                    [
+                        "E",
+                        "24"
+                    ],
+                    [
+                        "F",
+                        "14"
+                    ],
+                    [
+                        "F3",
+                        "8"
+                    ],
+                    [
+                        "F4",
+                        "6"
+                    ]
+                ]
+            },
+            "grading": {
+                "notes": "4 points total (1 point for each correct value). No credit if numbers are placed in the wrong rows."
+            }
+        }
+    },
+    {
+        "name": "IChO-2025_3.4",
+        "modality": "text",
+        "type": "table_completion",
+        "evaluation": "text_checking",
+        "points": 5,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Complete the table for the third smallest structure where Q = 4.",
+            "requirement": "Fill in (h,k), V, E, F, and F4 when Q=4 with F3=8.",
+            "table": {
+                "headers": [
+                    "Q",
+                    "(h,k)",
+                    "V",
+                    "E",
+                    "F",
+                    "F3",
+                    "F4"
+                ],
+                "rows": [
+                    [
+                        "4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "8",
+                        ""
+                    ]
+                ]
+            }
+        },
+        "answer": {
+            "context": "Values for the third smallest structure (Q = 4).",
+            "table": {
+                "headers": [
+                    "Parameter",
+                    "Q = 4 Value"
+                ],
+                "rows": [
+                    [
+                        "(h, k)",
+                        "(0, 2) or (2, 0)"
+                    ],
+                    [
+                        "V",
+                        "24"
+                    ],
+                    [
+                        "E",
+                        "48"
+                    ],
+                    [
+                        "F",
+                        "26"
+                    ],
+                    [
+                        "F3",
+                        "8"
+                    ],
+                    [
+                        "F4",
+                        "18"
+                    ]
+                ]
+            },
+            "grading": {
+                "notes": "5 points total (1 point each). No credit if numbers are placed in wrong rows."
+            }
+        }
+    },
+    {
+        "name": "IChO-2025_3.5",
+        "modality": "image + text",
+        "type": "structure_drawing",
+        "evaluation": "smiles_comparison",
+        "points": 40,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "In contrast to these large structures, the smallest structures contain two metals and four ligands and are called lanterns. Lanterns are formed by ligands such as L, which make two parallel N->Pd bonds. Ligand L has two planes of symmetry and can adopt a planar conformation with the angles shown.",
+            "image": "images/3/3.5_question.png",
+            "requirement": "Give the SMILES of compounds H, I, J, K, and ligand L.",
+            "parsing_note": "The synthesis sequence is encoded below as a reaction_scheme. Hint: H->I could also be achieved by Lewis acid catalysis.",
+            "reaction_scheme": [
+                {
+                    "reactant_smiles": "FC1=C(N)C=CC=C1N",
+                    "conditions": [
+                        {
+                            "step": 1,
+                            "solvent": [
+                                "O=C(OC)C#CC(OC)=O",
+                                "MeOH"
+                            ]
+                        }
+                    ],
+                    "product_name": "H",
+                    "product_formula": "C10H10FN3O6"
+                },
+                {
+                    "reactant_name": "H",
+                    "reactant_formula": "C10H10FN3O6",
+                    "conditions": [
+                        {
+                            "step": 1,
+                            "temperature": "250°C"
+                        }
+                    ],
+                    "product_name": "I",
+                    "product_formula": "C16H11FN2O6"
+                },
+                {
+                    "reactant_name": "I",
+                    "reactant_formula": "C16H11FN2O6",
+                    "conditions": [
+                        {
+                            "step": 1,
+                            "reagents": [
+                                "CC(C)OC(/N=N/C(OC(C)C)=O)=O",
+                                "CC(C)CO",
+                                "PPh3"
+                            ]
+                        }
+                    ],
+                    "product_name": "J",
+                    "product_formula": "C24H27FN4O8"
+                },
+                {
+                    "reactant_name": "J",
+                    "reactant_formula": "C24H27FN4O8",
+                    "conditions": [
+                        {
+                            "step": 1,
+                            "reagents": [
+                                "NaOH"
+                            ]
+                        }
+                    ],
+                    "product_name": "K"
+                },
+                {
+                    "reactant_name": "K",
+                    "conditions": [
+                        {
+                            "step": 1,
+                            "reagents": [
+                                "ClC(C(Cl)=O)=O"
+                            ]
+                        },
+                        {
+                            "step": 2,
+                            "reagents": [
+                                "NC1=CN=CC=C1",
+                                "NEt3"
+                            ]
+                        }
+                    ],
+                    "product_name": "L",
+                    "product_description": "compound with two 4-pyridyl groups at 180° and 120° angles"
+                }
+            ]
+        },
+        "answer": [
+            {
+                "name": "H",
+                "image": "images/3/3.5_ans_H.png",
+                "smiles": "FC1=C(N/C(C(OC)=O)=C/C(OC)=O)C=CC=C1N/C(C(OC)=O)=C/C(OC)=O",
+                "alternative_smiles": "FC1=C(/N=C(C(OC)=O)\\CC(OC)=O)C=CC=C1/N=C(C(OC)=O)\\CC(OC)=O",
+                "points": 8,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "Trivial mistakes (e.g., missing hydrogens, minor bond placement).",
+                            "deduction": -2
+                        }
+                    ],
+                    "notes": "Stereochemistry is not required. Alkenes may be drawn as cis or trans. Imine tautomer receives full credit. If the overall formula is incorrect, award at most 6 pt even with trivial mistakes."
+                }
+            },
+            {
+                "name": "I",
+                "image": "images/3/3.5_ans_I.png",
+                "smiles": "FC1=C2C(C(O)=CC(C(OC)=O)=N2)=CC3=C1N=C(C(OC)=O)C=C3O",
+                "alternative_smiles": "FC1=C2C(C(C=C(C(OC)=O)N2)=O)=CC3=C1NC(C(OC)=O)=CC3=O",
+                "points": 10,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "Four-membered ring lactam (matches formula but strained).",
+                            "deduction": -6
+                        },
+                        {
+                            "condition": "Indole/indolene structure instead of target.",
+                            "deduction": -6
+                        }
+                    ],
+                    "notes": "Pyridone tautomer earns full credit (10 pt). Errors carried forward from H may be allowed, but if the formula does not match, maximum 6 pt."
+                }
+            },
+            {
+                "name": "J",
+                "image": "images/3/3.5_ans_J.png",
+                "smiles": "O=C(OC)C1=CC(OCC(C)C)=C2C(C(F)=C(N=C(C(OC)=O)C=C3OCC(C)C)C3=C2)=N1",
+                "alternative_smiles": "O=C(OC)C(N(CC(C)C)C1C2C=C3C(N(CC(C)C)C(C(OC)=O)CC3=O)=C1F)=CC2=O",
+                "points": 6,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "Some, but not all, sufficiently acidic OH/NH groups undergo Mitsunobu alkylation OR alkylation shown on groups that would normally be unreactive (standard alcohol OH or amine NH).",
+                            "deduction": -2
+                        },
+                        {
+                            "condition": "OiBu or NiBu groups drawn in product but corresponding starting material was not OH/NH.",
+                            "deduction": -4
+                        },
+                        {
+                            "condition": "iPr drawn instead of iBu.",
+                            "deduction": -1
+                        }
+                    ],
+                    "notes": "Errors carried forward from I may be allowed. Full credit (6 pt) when all sufficiently acidic OH/NH undergo correct Mitsunobu alkylation."
+                }
+            },
+            {
+                "name": "K",
+                "image": "images/3/3.5_ans_K.png",
+                "smiles": "OC(C1=CC(OCC(C)C)=C2C(C(F)=C(N=C(C(O)=O)C=C3OCC(C)C)C3=C2)=N1)=O",
+                "alternative_smiles": "",
+                "points": 6,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "Ester hydrolysis incomplete or incorrect; other base-labile groups not hydrolyzed.",
+                            "deduction": -3
+                        }
+                    ],
+                    "notes": "Errors carried forward from J may be allowed, but the structure must reflect correct ester hydrolysis; other base-labile functional groups must be hydrolyzed."
+                }
+            },
+            {
+                "name": "L",
+                "image": "images/3/3.5_ans_L.png",
+                "smiles": "O=C(NC1=CN=CC=C1)C2=CC(OCC(C)C)=C3C(C(F)=C(N=C(C(NC4=CN=CC=C4)=O)C=C5OCC(C)C)C5=C3)=N2",
+                "alternative_smiles": "",
+                "points": 10,
+                "grading": {
+                    "partial_credit": [
+                        {
+                            "condition": "Ligand does not show two planes of symmetry.",
+                            "deduction": -2
+                        },
+                        {
+                            "condition": "Both outer rigid pieces are not at 180°.",
+                            "deduction": -2
+                        },
+                        {
+                            "condition": "Central rigid piece is not at 120°.",
+                            "deduction": -2
+                        },
+                        {
+                            "condition": "Carbons from oxalyl chloride have been incorporated into the final ligand.",
+                            "deduction": -2
+                        }
+                    ],
+                    "notes": "Errors carried forward from K may be allowed, but overall transformation must be feasible under the stated conditions for full credit."
+                }
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_3.6",
+        "modality": "image + text",
+        "type": "table_completion",
+        "evaluation": "text_checking",
+        "points": 20,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+          "context": "Unlike symmetrical ligand L, chiral ligand M lacks symmetry and exists as a pair of R and S enantiomers. Lantern isomers are categorized by ligand chirality composition: (i) all the same (RRRR or SSSS), (ii) one different (RRRS or SSSR), (iii) cis-RRSS, and (iv) trans-RSRS; and by head–tail orientation: (1) HHHH, (2) HHHT, (3) cis-HHTT, (4) trans-HTHT. In any one combination, all possible isomers are either chiral or achiral.",
+          "parsing_note": "Category icons in the header (1–4) and row labels (i–iv) have been converted into textual labels.",
+          "ligand_M": {
+            "image": "images/3/3.6_context.png",
+            "smiles_R": "[H][C@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4",
+            "smiles_S": "[H][C@@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4"
+          },
+          "images": {
+            "orientation_examples": [
+              "images/3/3.6_ques_1.png",
+              "images/3/3.6_ques_2.png",
+              "images/3/3.6_ques_3.png",
+              "images/3/3.6_ques_4.png"
+            ],
+            "head_tail_examples": [
+              "images/3/3.6_ques_i.png",
+              "images/3/3.6_ques_ii.png",
+              "images/3/3.6_ques_iii.png",
+              "images/3/3.6_ques_iv.png"
+            ]
+          },
+          "table": {
+            "row_labels": ["i (RRRR/SSSS)", "ii (RRRS/SSSR)", "iii (cis-RRSS)", "iv (trans-RSRS)"],
+            "col_labels": ["1 (HHHH)", "2 (HHHT)", "3 (cis-HHTT)", "4 (trans-HTHT)"],
+            "cells": [
+              ["", "", "", ""],
+              ["", "", "", ""],
+              ["", "", "", ""],
+              ["", "", "", ""]
+            ]
+          },
+          "requirement": "Complete the table by writing \"C\" for chiral and \"A\" for achiral in each applicable cell."
+        },
+        "answer": {
+          "context": "Correct chiral/achiral assignments for each combination.",
+          "table": {
+            "row_labels": ["i (RRRR/SSSS)", "ii (RRRS/SSSR)", "iii (cis-RRSS)", "iv (trans-RSRS)"],
+            "col_labels": ["1 (HHHH)", "2 (HHHT)", "3 (cis-HHTT)", "4 (trans-HTHT)"],
+            "cells": [
+              ["C", "C", "C", "C"],
+              ["C", "C", "C", "C"],
+              ["A", "C", "A", "C"],
+              ["A", "C", "A", "A"]
+            ]
+          },
+          "grading": {
+            "notes": "Award points for each correct cell; deduct points for each incorrect cell down to a minimum of zero. No penalty for empty cells.",
+            "per_cell_points": 1.25,
+            "deduction_per_incorrect_cell": 1.25,
+            "min_score": 0
+          }
+        }
+      },
+      {
+        "name": "IChO-2025_3.7",
+        "modality": "image + text",
+        "type": "table_completion",
+        "evaluation": "numeric_checking",
+        "points": 32,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+          "context": "Complete the table with the number of possible isomers for each combination of ligand chirality pattern (i–iv) and head–tail orientation (1–4). Each cell corresponds to one structural category. Enter the total number of distinct isomers in each case.",
+          "parsing_note": "Header icons (1–4) and row icons (i–iv) are represented by local images; textual labels are also provided.",
+          "ligand_M": {
+            "image": "images/3/3.6_context.png",
+            "smiles_R": "[H][C@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4",
+            "smiles_S": "[H][C@@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4"
+          },
+          "images": {
+            "orientation_examples": [
+              "images/3/3.6_ques_1.png",
+              "images/3/3.6_ques_2.png",
+              "images/3/3.6_ques_3.png",
+              "images/3/3.6_ques_4.png"
+            ],
+            "head_tail_examples": [
+              "images/3/3.6_ques_i.png",
+              "images/3/3.6_ques_ii.png",
+              "images/3/3.6_ques_iii.png",
+              "images/3/3.6_ques_iv.png"
+            ]
+          },
+          "table": {
+            "row_labels": ["i (RRRR/SSSS)", "ii (RRRS/SSSR)", "iii (cis-RRSS)", "iv (trans-RSRS)"],
+            "col_labels": ["1 (HHHH)", "2 (HHHT)", "3 (cis-HHTT)", "4 (trans-HTHT)"],
+            "cells": [
+              [
+                { "value": "", "prefilled": false },
+                { "value": "2", "prefilled": true },
+                { "value": "", "prefilled": false },
+                { "value": "", "prefilled": false }
+              ],
+              [
+                { "value": "", "prefilled": false },
+                { "value": "", "prefilled": false },
+                { "value": "4", "prefilled": true },
+                { "value": "", "prefilled": false }
+              ],
+              [
+                { "value": "", "prefilled": false },
+                { "value": "", "prefilled": false },
+                { "value": "", "prefilled": false },
+                { "value": "", "prefilled": false }
+              ],
+              [
+                { "value": "", "prefilled": false },
+                { "value": "", "prefilled": false },
+                { "value": "", "prefilled": false },
+                { "value": "", "prefilled": false }
+              ]
+            ]
+          },
+          "requirement": "Write the total number of possible isomers for each combination. Cells that are already filled do not need to be answered. No partial credit for swapped rows/columns. No error carried forward from previous part."
+        },
+        "answer": {
+          "context": "Correct number of isomers for each combination.",
+          "table": {
+            "row_labels": ["i (RRRR/SSSS)", "ii (RRRS/SSSR)", "iii (cis-RRSS)", "iv (trans-RSRS)"],
+            "col_labels": ["1 (HHHH)", "2 (HHHT)", "3 (cis-HHTT)", "4 (trans-HTHT)"],
+            "cells": [
+              ["2", "2", "2", "2"],
+              ["2", "8", "4", "2"],
+              ["1", "4", "3", "2"],
+              ["1", "2", "1", "1"]
+            ]
+          },
+          "grading": {
+            "notes": "Each correct number earns the points shown; prefilled cells are not graded. No credit for incorrect or misplaced values; no alternative arrangements accepted; no carry-forward credit.",
+            "total_points": 32,
+            "per_cell_points": [
+              [1, 1, 1, 1],
+              [2, 4, 4, 2],
+              [2, 4, 4, 2],
+              [2, 2, 2, 3]
+            ]
+          }
+        }
+      }
+]
