@@ -338,19 +338,19 @@
         },
         "answer": [
             {
-                "content": "Volume of adsorbed CO = 50 µL × 0.1 × (0.96 + 0.90 + 0.80 + 0.50 + 0.20) = 16.8 µL.",
+                "content": "Volume of adsorbed CO = 50~\\mu L \\times 0.1 \\times (0.96 + 0.90 + 0.80 + 0.50 + 0.20) = 16.8~\\mu L.",
                 "points": 1
             },
             {
-                "content": "Molecules of adsorbed CO: n = (100000 × 1.68×10⁻⁸) / (8.314 × 298) × 6.022×10²³ = 4.08×10¹⁷ molecules.",
+                "content": "Molecules of adsorbed CO: $n = \\dfrac{100000 \\times 1.68\\times10^{-8}}{8.314 \\times 298} \\times 6.022\\times10^{23} = 4.08\\times10^{17}$ molecules.",
                 "points": 1
             },
             {
-                "content": "Total Ni atoms = 0.015 g × 0.1 × (6.022×10²³ / 58.69) = 1.54×10¹⁹ atoms.",
+                "content": "Total Ni atoms = $0.015~\\mathrm{g} \\times 0.1 \\times \\dfrac{6.022\\times10^{23}}{58.69} = 1.54\\times10^{19}$ atoms.",
                 "points": 1
             },
             {
-                "content": "% Ni exposed = (4.08×10¹⁷ / 1.54×10¹⁹) × 100% = 2.65%.",
+                "content": "\\% Ni exposed = $\\dfrac{4.08\\times10^{17}}{1.54\\times10^{19}} \\times 100\\% = 2.65\\%.$",
                 "points": 1
             }
         ]
@@ -400,11 +400,13 @@
             },
             {
                 "label": "B",
-                "smiles": "Br[Mn]1([N]2=C(C3=NC=CC=C3)C=CC=C2C4=[N]1C=CC=C4)([C]=O)([C]=O)[C]=O"
+                "smiles": "Br[Mn]1([N]2=C(C3=NC=CC=C3)C=CC=C2C4=[N]1C=CC=C4)([C]=O)([C]=O)[C]=O",
+                "alternative_smiles": ""
             },
             {
                 "label": "C",
-                "smiles": "[Mn](N=[N+]=[N-])(C#O)(C#O)(C#O)(N1C=CC=NC2=CC=CC=N12)"
+                "smiles": "[Mn](N=[N+]=[N-])(C#O)(C#O)(C#O)(N1C=CC=NC2=CC=CC=N12)",
+                "alternative_smiles":""
             },
             {
                 "label": "D",
