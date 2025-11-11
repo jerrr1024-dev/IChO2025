@@ -1,0 +1,26 @@
+[
+    {
+        "name": "IChO-2025_9",
+        "background": {
+            "context": "Note: In any answer for this task, stereochemistry is not required and the phosphate group can be abbreviated as 'OP' (see the scheme below)."
+        },
+        "points": 36
+    },
+    {
+        "name": "IChO-2025_9.1",
+        "modality": "image + text",
+        "type": "choice",
+        "evaluation": "checking",
+        "requirement": "",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "image": "/images/9/9_bg.png",
+            "context": "Transketolase (TK) and transaldolase (TA) are enzymes that catalyse C-C bond cleavage. TK contains the cofactor thiamine pyrophosphate 1, a derivative of vitamin B1, in the active site. Breslow and coworkers studied cation 2, a model of cofactor 1, to demonstrate the relatively acidic properties of thiamine. Cation 2 underwent a single H/D exchange in D_{2}O, which yielded 4 via intermediate 3.",
+            "molecular_1":"",
+            "notes": "",
+            "reaction_scheme": "",
+        }
+    }
+]

@@ -10,8 +10,9 @@
     {
         "name": "IChO-2025_1.1",
         "modality": "image + text",
-        "type": "structure_drawing",
+        "type": "molecule_structure_drawing",
         "evaluation": "smiles_comparison",
+        "requirement": "",
         "points": 7,
         "field": "",
         "source": "IChO-2025",
