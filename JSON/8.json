@@ -1,0 +1,460 @@
+[
+    {
+        "name": "IChO-2025_8",
+        "background": {
+            "context": "Carbon monoxide is a toxic gas because it binds to haemoglobin and blocks oxygen binding. A major source of CO is incomplete combustion of engine fuel. Therefore, many exhausts are fitted with catalytic converters which remove CO and other hazardous compounds including unburnt hydrocarbons and nitrogen oxides $NO_{x}$, forming mainly water vapour, carbon dioxide, and nitrogen."
+        },
+        "points": 35
+    },
+    {
+        "name": "IChO-2025_8.1",
+        "modality": "text",
+        "type": "table_classification",
+        "evaluation": "step_points",
+        "points": 4,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Write the balanced equation for each conversion that occurs in a catalytic converter. For each row, ALSO choose whether the relevant element (C in (a,b); N in (c)) is oxidised by oxygen ('Ox'), reduced ('Red'), or unchanged ('Same'). Ignore any reactions between different exhaust gases.",
+            "rows": [
+                {
+                    "label": "(a)",
+                    "species": "CO"
+                },
+                {
+                    "label": "(b)",
+                    "species": "Unburnt hydrocarbon $C_xH_y$"
+                },
+                {
+                    "label": "(c)",
+                    "species": "Nitrogen oxides $NO_x$"
+                }
+            ],
+            "choice_options": [
+                "Ox",
+                "Red",
+                "Same"
+            ],
+            "response_format": "For each row, return an object with keys: 'equation' (string) and 'choice' (one of 'Ox'|'Red'|'Same')."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": {
+                    "equation": "CO + 1/2 O2 -> CO2",
+                    "choice": "Ox"
+                },
+                "points": 1.5,
+                "grading": "0.5 pt for correct equation; 0.5 pt for correct choice here; remaining 0.5 pt is awarded across (b)/(c) per original rubric."
+            },
+            {
+                "step": 2,
+                "content": {
+                    "equation": "C_xH_y + (x + y/4) O2 -> xCO2 + (y/2) H2O",
+                    "choice": "Ox"
+                },
+                "points": 1.5,
+                "grading": "1.0 pt for correct equation; 0.5 pt for correct choice."
+            },
+            {
+                "step": 3,
+                "content": {
+                    "equation": "NO_x -> 1/2 N2 + (x/2) O2",
+                    "choice": "Red"
+                },
+                "points": 1.0,
+                "grading": "1.0 pt for correct equation and choice."
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_8.2",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 1,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Catalytic converters contain nanoparticles of noble metals immobilised on high-surface-area supports (e.g., $Al_{2}O_3}$). In one experiment, $m(cat.)=0.10 g$ containing $w(Pd)=10%$ was used. CO flows at $v(CO)=10 mL {min}^{-1}$ and is mixed with air (assume $20%,O_{2}, 80% N_{2}$) at $T=273.15 K$ and $p=1.00 atm.",
+            "question_text": "Calculate the air flow rate $v (in mL min^{-1})$ of air required to be present in a stoichiometric ratio."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Stoichiometry requires 0.5 mol O2 per mol CO → 5 mL O2 per 10 mL CO. Since air is 20% O2, required air flow = 5/0.20 = 25 mL·min⁻¹.",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_8.3",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 6,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Assume 10% of the Pd atoms in the nanoparticles are exposed on the surface. Assume the conversion of CO to  $CO_{2}$  was 70%. Calculate the number of CO2 molecules formed after 1 h per surface Pd atom."
+        },
+        "answer": [
+            {
+                "step": 1,
+                "content": "Volume of CO in 1 h: 60 min × 0.01 dm^3·min^-1 = 0.6 dm^3.",
+                "points": 1
+            },
+            {
+                "step": 2,
+                "content": "Moles CO: $n = \\frac{pV}{RT} = \\frac{101325 \\times 0.6 \\times 10^{-3}}{8.314 \\times 273.15} = 0.02677\\,mol$.",
+                "points": 1
+            },
+            {
+                "step": 3,
+                "content": "Moles CO2 formed (70%): $0.02677 \\times 0.7 = 0.01874\\,mol$ → molecules $= 0.01874 \\times 6.022 \\times 10^{23} = 1.128 \\times 10^{22}$.",
+                "points": 1
+            },
+            {
+                "step": 4,
+                "content": "Surface Pd mass: total Pd = 0.10 g × 10% = 0.01 g; surface fraction 10% → 0.001 g.",
+                "points": 1
+            },
+            {
+                "step": 5,
+                "content": "Surface Pd atoms: $(0.001 / 106.42) \\times 6.022 \\times 10^{23} = 5.659 \\times 10^{18}$.",
+                "points": 1
+            },
+            {
+                "step": 6,
+                "content": "CO2 molecules per surface Pd atom: $(1.128 \\times 10^{22}) / (5.659 \\times 10^{18}) = 1.99 \\times 10^{3}$.",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_8.4",
+        "modality": "image + text",
+        "type": "table_completion",
+        "evaluation": "step_points",
+        "points": 3,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Ruthenium nanoparticles are efficient catalysts for CO combustion. The bonding interactions between CO molecules and surface Ru atoms are of two types: (1) σ-bonding through a lone pair on the carbon atom; (2) π-interaction through overlap between Ru d-orbitals and CO molecular orbitals.",
+            "instruction": "Complete the molecular orbital (MO) diagram of CO by assigning electrons and indicate the type (σ or π) of overlap for each MO.",
+            "table": {
+                "headers": [
+                    "MO",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                ],
+                "rows": [
+                    {
+                        "label": "Type of overlap",
+                        "values": [
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ]
+                    }
+                ]
+            },
+            "image": "images/8/8.4_mo_diagram.png"
+        },
+        "answer": [
+            {
+                "content": "MO types of overlap: 1 = σ, 2 = σ, 3 = π, 4 = π, 5 = σ, 6 = π, 7 = π, 8 = σ.",
+                "points": 1.5,
+                "grading": "0.25 pt for each correctly assigned σ/π overlap; adding (*) for antibonding not required."
+            },
+            {
+                "content": "Electrons correctly filled in molecular orbitals with spins shown.",
+                "points": 1.5,
+                "grading": "1.5 pts for correct filling and spin assignment; if spins missing but electrons correct, 0.5 pt deducted."
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_8.5",
+        "modality": "text",
+        "type": "multiple choice",
+        "evaluation": "exact_match",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "What is the effect of the Ru–CO π-interaction on the Ru–CO and C–O bond strengths? Choose the correct answer for each bond.",
+            "subquestions": [
+                {
+                    "id": "8.5a",
+                    "text": "Ru–CO bond strength:",
+                    "options": {
+                        "A": "increases (in)",
+                        "B": "decreases (dec)",
+                        "C": "no change (nc)"
+                    }
+                },
+                {
+                    "id": "8.5b",
+                    "text": "C–O bond strength:",
+                    "options": {
+                        "A": "increases (in)",
+                        "B": "decreases (dec)",
+                        "C": "no change (nc)"
+                    }
+                }
+            ]
+        },
+        "answer": [
+            {
+                "subquestion": "8.5a",
+                "correct_option": "A",
+                "content": "Ru–CO bond strength increases due to π-backbonding from Ru to CO.",
+                "points": 1
+            },
+            {
+                "subquestion": "8.5b",
+                "correct_option": "B",
+                "content": "C–O bond strength decreases because π-backbonding fills antibonding orbitals of CO.",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_8.6",
+        "modality": "image + text",
+        "type": "table_completion",
+        "evaluation": "exact_match",
+        "points": 2,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Adsorbed CO molecules show strong IR absorptions due to C–O stretching vibrations. CO can interact with one or more metal atoms on a surface, forming three adsorption modes (A, B, C). The IR peaks observed for free CO and the three binding modes are at 1850, 1930, 2100, and 2143 cm⁻¹. Assign each wavenumber to the correct adsorption mode.",
+            "table": {
+                "headers": [
+                    "",
+                    "1850 cm⁻¹",
+                    "1930 cm⁻¹",
+                    "2100 cm⁻¹",
+                    "2143 cm⁻¹"
+                ],
+                "rows": [
+                    {
+                        "label": "A",
+                        "values": [
+                            "",
+                            "",
+                            "",
+                            ""
+                        ]
+                    },
+                    {
+                        "label": "B",
+                        "values": [
+                            "",
+                            "",
+                            "",
+                            ""
+                        ]
+                    },
+                    {
+                        "label": "C",
+                        "values": [
+                            "",
+                            "",
+                            "",
+                            ""
+                        ]
+                    },
+                    {
+                        "label": "CO (free)",
+                        "values": [
+                            "",
+                            "",
+                            "",
+                            ""
+                        ]
+                    }
+                ]
+            },
+            "image": "images/8/8.6_adsorption_modes.png"
+        },
+        "answer": [
+            {
+                "content": "A = 2100 cm⁻¹; B = 1930 cm⁻¹; C = 1850 cm⁻¹; free CO = 2143 cm⁻¹.",
+                "points": 2,
+                "grading": "0.5 pt for each correctly assigned wavenumber."
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_8.7",
+        "modality": "text",
+        "type": "numerical_calculation",
+        "evaluation": "step_points",
+        "points": 4,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Dispersion of a metal catalyst refers to the percentage of its atoms exposed on the surface. Dispersion can be determined by pulse chemisorption of CO, since it adsorbs selectively onto surface atoms. Equal pulses of known CO amounts are injected, and the unadsorbed CO from each pulse is detected until saturation. One experiment used 50 µL pulses of 10% CO in He at 25 °C and 100 kPa, with 15 mg catalyst composed of 10 wt% Ni on Al₂O₃. Assume one CO molecule adsorbs per surface Ni atom.",
+            "table": {
+                "headers": [
+                    "Pulse #",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                ],
+                "rows": [
+                    {
+                        "label": "% of pulse unadsorbed",
+                        "values": [
+                            "4",
+                            "10",
+                            "20",
+                            "50",
+                            "80",
+                            "100",
+                            "100"
+                        ]
+                    }
+                ]
+            },
+            "question_text": "Calculate the percentage of Ni atoms exposed on the surface, %Ni."
+        },
+        "answer": [
+            {
+                "content": "Volume of adsorbed CO = 50~\\mu L \\times 0.1 \\times (0.96 + 0.90 + 0.80 + 0.50 + 0.20) = 16.8~\\mu L.",
+                "points": 1
+            },
+            {
+                "content": "Molecules of adsorbed CO: $n = \\dfrac{100000 \\times 1.68\\times10^{-8}}{8.314 \\times 298} \\times 6.022\\times10^{23} = 4.08\\times10^{17}$ molecules.",
+                "points": 1
+            },
+            {
+                "content": "Total Ni atoms = $0.015~\\mathrm{g} \\times 0.1 \\times \\dfrac{6.022\\times10^{23}}{58.69} = 1.54\\times10^{19}$ atoms.",
+                "points": 1
+            },
+            {
+                "content": "\\% Ni exposed = $\\dfrac{4.08\\times10^{17}}{1.54\\times10^{19}} \\times 100\\% = 2.65\\%.$",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_8.8",
+        "modality": "text",
+        "type": "structure_prediction",
+        "evaluation": "step_points",
+        "points": 8,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Compounds A–D are neutral Mn(I) carbonyl complexes involved in a sequence of reactions starting from Mn2(CO)10 with Br2 and a bidentate nitrogen ligand (L = 2,2'-bipyridine-type). B, C, and D do not contain two CO ligands in a trans arrangement. The IR spectrum of C contains a band at 2042 cm⁻¹ in addition to the CO stretching bands. Table provides %Mn by mass and number of CO stretching bands. Write the SMILES of compounds A–D corresponding to their correct structures.",
+            "reaction_scheme": [
+                {
+                    "reactant_name": "$Mn_{2}(CO)_{10}$",
+                    "conditions": "$Br_{2}$",
+                    "product_name": "A"
+                },
+                {
+                    "reactant_name": "A",
+                    "conditions": "C1(C2=NC(C3=NC=CC=C3)=CC=C2)=CC=CC=N1",
+                    "product_name": "B"
+                },
+                {
+                    "reactant_name": "B",
+                    "conditions": [
+                        "Ag_{+}",
+                        "[O-]S(=O)(C(F)(F)F)=O",
+                        "NaN_{3}"
+                    ],
+                    "product_name": "C"
+                },
+                {
+                    "reactant_name": "B",
+                    "reactant_smiles": "[Mn](Br)(C#O)(C#O)(C#O)(N1C=CC=NC2=CC=CC=N12)",
+                    "conditions": "$h\\nu$ (photolysis)",
+                    "product_name": "D"
+                }
+            ]
+        },
+        "answer": [
+            {
+                "label": "A",
+                "smiles": "Br[Mn]([C]=O)([C]=O)([C]=O)([C]=O)[C]=O"
+            },
+            {
+                "label": "B",
+                "smiles": "Br[Mn]1([N]2=C(C3=NC=CC=C3)C=CC=C2C4=[N]1C=CC=C4)([C]=O)([C]=O)[C]=O",
+                "alternative_smiles": ""
+            },
+            {
+                "label": "C",
+                "smiles": "[Mn](N=[N+]=[N-])(C#O)(C#O)(C#O)(N1C=CC=NC2=CC=CC=N12)",
+                "alternative_smiles":""
+            },
+            {
+                "label": "D",
+                "smiles": "[Mn](Br)(C#O)(C#O)(N1C=CC=NC2=CC=CC=N12)"
+            }
+        ],
+        "grading": {
+            "criteria": [
+                "A correct 1 pt (Mn(CO)5Br formula only 0.5 pt).",
+                "B correct fac configuration 3 pts (unclear geometry 2.0 pts; correct formula only or non-coordinated Br 0.5 pt).",
+                "C correct fac configuration 2 pts (unclear geometry 1.5 pts; correct formula only or non-coordinated azide 0.5 pt).",
+                "D correct cis configuration 2 pts (unclear geometry 1.5 pts; correct formula only/trans/five-coordinate with non-coordinated azide 0.5 pt).",
+                "No credit for structures not matching formula."
+            ]
+        }
+    },
+    {
+        "name": "IChO-2025_8.9",
+        "modality": "text",
+        "type": "structure_prediction",
+        "evaluation": "step_points",
+        "points": 5,
+        "field": "",
+        "source": "IChO-2025",
+        "question": {
+            "context": "Compound C reacts with alkynes in an Inorganic Click (iClick) reaction to form triazole products. During the conversion of C to E, the 2042 cm⁻¹ band in the IR spectrum of C disappears, and E shows two new C=O bands in the range 1735–1725 cm⁻¹. After 6 h, E converts to F, which shows only one C=O band in this range. Compound G does not contain manganese and has two planes of symmetry. Draw the structures of compounds E, F, and G (only one enantiomer if chiral). Here, instead of drawing, provide the SMILES of compounds E, F, and G."
+        },
+        "answer": [
+            {
+                "label": "E",
+                "content": "[Mn](C#O)(C#O)(C#O)(N1C=CC=NC2=CC=CC=N12)(N3C(C(=O)OC)=C(NN=C3C(=O)OC)C(=O)OC)"
+            },
+            {
+                "label": "F",
+                "content": "[Mn](C#O)(C#O)(C#O)(N1C=CC=NC2=CC=CC=N12)(N3C(=C(NN=C3C(=O)OC)C(=O)OC)C(=O)OC)"
+            },
+            {
+                "label": "G",
+                "content": "COC(=O)C1=NN=CN1C(=O)OC"
+            }
+        ],
+        "grading": {
+            "criteria": [
+                "E correct 2 pts (either enantiomer acceptable; full credit if ligands around Mn same as in C and triazole correctly coordinated through N). Partial credit 1 pt if ligands rearranged but triazole correct. If F drawn here, 1 pt.",
+                "F correct 2 pts (either enantiomer acceptable; full credit if ligands around Mn same as in C/E and triazole coordinated through correct N). Partial credit 1 pt if ligands rearranged but triazole correct. If E drawn here, 1 pt.",
+                "G correct 1 pt (correct triazole NH isomer; 0.5 pt if wrong isomer but consistent with F).",
+                "Total = 5 pts."
+            ]
+        }
+    }
+]

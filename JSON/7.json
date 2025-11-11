@@ -58,7 +58,7 @@
             },
             {
                 "step": 7,
-                "content": "3' = allylic McLafferty fragment from oct-1-ene, SMILES: [CH2CHCHCH2]+, formula C4H7+",
+                "content": "3' = allylic McLafferty fragment from oct-1-ene, SMILES: C=CCCC+, formula C4H7+",
                 "points": 1
             },
             {
