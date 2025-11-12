@@ -16,11 +16,302 @@
         "field": "",
         "source": "IChO-2025",
         "question": {
-            "image": "/images/9/9_bg.png",
+            "image": [
+                "/images/9/9.1_ques.png",
+                "/images/9/9.1_ans.png"
+            ],
             "context": "Transketolase (TK) and transaldolase (TA) are enzymes that catalyse C-C bond cleavage. TK contains the cofactor thiamine pyrophosphate 1, a derivative of vitamin B1, in the active site. Breslow and coworkers studied cation 2, a model of cofactor 1, to demonstrate the relatively acidic properties of thiamine. Cation 2 underwent a single H/D exchange in D_{2}O, which yielded 4 via intermediate 3.",
-            "molecular_1":"",
-            "notes": "",
-            "reaction_scheme": "",
+            "requirement": "choose the molecular in image from left to right as 1,2,3,4",
+            "parsing_note": "molecular 1 has been be converted as smiles format, some represents information has benn mentioned in notes, the reaction information has been process as reaction_scheme",
+            "molecular_1": "NC1=C(C[N+]2=CSC(CCOP([O-])(OP([O-])([O-])=O)=O)=C2C)C=NC(C)=N1",
+            "notes": "[O-]P(O[R])([O-])=O is equal to [R]O[P]",
+            "reaction_scheme": [
+                {
+                    "reactant_name": "2",
+                    "reactant_smiles": "C[N+]1=CSC=C1C",
+                    "conditions": "-H^{+}",
+                    "product_name": "3"
+                },
+                {
+                    "reactant_name": "3",
+                    "conditions": "+D_{2}O, -DO^{-}",
+                    "product_name": "4",
+                    "product_smiles": "[R2][N+]1=C([R1])SC([R4])=C1[R3]"
+                }
+            ],
+            "choice": [
+                {
+                    "name": "1",
+                    "smiles": "[2H]C1=C(C)[N+](C)=CS1"
+                },
+                {
+                    "name": "2",
+                    "smiles": "[2H]C1=[N+](C)C(C)=CS1"
+                },
+                {
+                    "name": "3",
+                    "smiles": "[H]C([2H])([H])C1=CSC=[N+]1C"
+                },
+                {
+                    "name": "4",
+                    "smiles": "[2H]C([H])([H])[N+]1=CSC=C1C"
+                }
+            ]
+        },
+        "answer": {
+            "context": "the 2. molecular is the answer",
+            "points": 2
+        }
+    },
+    {
+        "name": "IChO-2025_9.2",
+        "modality": "image + text",
+        "type": "moleculat_strucutre_drawing",
+        "evaluation": "checking",
+        "requirement": "smiles_comparison",
+        "points": 6,
+        "field": "",
+        "question": {
+            "context": "Draw the structures of compounds 3, 6, and 8. Intermediates 6 and 8 are cations. There is no rearrangement in this catalytic cycle.",
+            "image": "/images/9/9.2_ques.png",
+            "requirement": "Convert the drawn structures to SMILES format (stereochemistry not required)."
+        },
+        "answer": {
+            "structure": [
+                {
+                    "name": "3",
+                    "smiles": [
+                        "C[N+]1=[C-]SC=C1C",
+                        "C[NH+]1CSC=C1C"
+                    ],
+                    "grading":
+                },
+                {
+                    "name": "6",
+                    "smiles": [
+                        "OC([H])(C1=CC=CC=C1)C2=[N+](C)C(C)=CS2",
+                        "OC([H])(C1=CC=CC=C1)C2=[S+]C=C(C)N2C",
+                        "OC([H])(C1=CC=CC=C1)C2N(C)C(C)=CS2"
+                    ]
+                },
+                {
+                    "name": "8",
+                    "smiles": [
+                        "OC(C(O)C1=CC=CC=C1)(C2=CC=CC=C2)C3=[N+](C)C(C)=CS3",
+                        "OC(C(O)C1=CC=CC=C1)(C2=CC=CC=C2)C3=[S+]C=C(C)N3C"
+                    ]
+                }
+            ],
+            "grading": {
+                "points_per_structure": 2,
+                "partial_credit": [
+                    {
+                        "condition": "Intermediate 3 is graded with 2 pt and intermediate 6 is graded with 1 pt if deuteration was performed at the wrong position in 9.1 and the same wrong assumption was made for compounds 3 and 6.",
+                        "deduction": "Special case: Int 3 gets 2pt, Int 6 gets 1pt"
+                    },
+                    {
+                        "condition": "If a charge is missed.",
+                        "deduction": -0.5
+                    }
+                ],
+                "notes": "Alternative but correct resonance structures are graded with full points.",
+                "total_points": 6
+            }
+        }
+    },
+    {
+        "name": "IChO-2025_9.3-4",
+        "modality": "image + text",
+        "type": "moleculat_strucutre_drawing",
+        "evaluation": "checking",
+        "requirement": "smiles_comparison",
+        "points": 8,
+        "field": "",
+        "question": {
+            "context": "Compounds such as 3 have many applications in organocatalysis. When a catalytic amount of 3 is generated in a solution of benzaldehyde 5, a condensation reaction leads to product 9 via the catalytic cycle shown.",
+            "image": "/images/9/9.3-4_ques.png",
+            "requirement": "Convert the drawn structures to SMILES format (stereochemistry not required)."
+        },
+        "answer": [
+            {
+                "name": 13,
+                "smiles": [
+                    "O=C([C@]([C@@]([H])(COP([O-])([O-])=O)O)(O)[H])CO",
+                    "O=C([C@]([C@@]([H])(CO[P])O)(O)[H])CO",
+                    "OCC(C(C(O)COP([O-])([O-])=O)O)=O",
+                    "OCC(C(C(O)CO[P])O)=O"
+                ],
+                "grading": [
+                    {
+                        "condition": "total regardless of the stereochemistry",
+                        "deduction": 0
+                    },
+                    {
+                        "condition": "if one charge is missing (cahrge is not required in case of phosphate being abbreviated as 'P').",
+                        "deduction": 0.5
+                    }
+                ],
+                "notes": "match one of smiles list gets full points",
+                "points": 2
+            },
+            {
+                "name": 15,
+                "smiles": "O[C@@]([C@]([C@@]([H])(CO[P])O)([H])O)([H])[C@](O)([C@@](O)(C1=[N+]([R1])C(C)=C([R2])S1)CO)[H]",
+                "points": 2
+            },
+            {
+                "name": 16,
+                "smiles": "[R2]C(S/1)=C(C)N([R1])C1=C(O)/CO",
+                "points": 2
+            },
+            {
+                "name": 17,
+                "smiles": [
+                    "O[C@@](COP([O-])([O-])=O)([H])[C@](O)([C@@](O)(C1=[S+]C([R2])=C(C)N1[R1])CO)[H]",
+                    "O[C@@](CO[P])([H])[C@](O)([C@@](O)(C1=[N+]([R1])C(C)=C([R2])S1)CO)[H]",
+                    "O[C@@](COP([O-])([O-])=O)([H])[C@](O)([C@@](O)(C1=[N+]([R1])C(C)=C([R2])S1)CO)[H]",
+                    "O[C@@](COP([O-])([O-])=O)([H])[C@](O)([C@@](O)(C1N([R1])C(C)=C([R2])S1)CO)[H]"
+                ],
+                "notes": "match one of smiles list gets full points",
+                "points": 2
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_9.5",
+        "modality": "image + text",
+        "type": "moleculat_strucutre_drawing",
+        "evaluation": "checking",
+        "requirement": "smiles_comparison",
+        "points": 10,
+        "field": "",
+        "question": {
+            "context": "Enzyme TA catalyses the transfer of a three-carbon fragment from a ketose to an aldose. The residue of amino acid lysine 20 in the active site of TA is responsible for the enzyme activity.",
+            "image": "/images/9/9.5_ques.png",
+            "requirement": "Convert the drawn structures to SMILES format (stereochemistry not required)."
+        },
+        "answer": [
+            {
+                "name": 21,
+                "smiles": "N[R]",
+                "grading": {
+                    "condition": "If the charge is missed.",
+                    "deduction": 0.5
+                },
+                "points": 2
+            },
+            {
+                "name": 22,
+                "smiles": "OCC(C(O)C([R4])O)=N[R]",
+                "grading": {
+                    "condition": "If the charge is missed.",
+                    "deduction": 0.5
+                },
+                "points": 2
+            },
+            {
+                "name": 23,
+                "smiles": "OC/C(C(O)C([R4])O[H])=[N+]([H])/[R]",
+                "grading": {
+                    "condition": "If the charge is missed.",
+                    "deduction": 0.5
+                },
+                "points": 2
+            },
+            {
+                "name": 24,
+                "smiles": "OC/C(N[R])=C\\O",
+                "grading": {
+                    "condition": "If the charge is missed.",
+                    "deduction": 0.5
+                },
+                "points": 2
+            },
+            {
+                "name": 25,
+                "smiles": [
+                    "OC(C(O)C(COP([O-])([O-])=O)O)/C(CO)=[N+]([R])/[H]",
+                    "OC(C(O)C(CO[P])O)/C(CO)=[N+]([R])/[H]"
+                ],
+                "notes": "match one of smiles list gets full points",
+                "grading": {
+                    "condition": "If the charge is missed.",
+                    "deduction": 0.5
+                },
+                "points": 2
+            }
+        ]
+    },
+    {
+        "name": "IChO-2025_9.6",
+        "modality": "image + text",
+        "type": "reaction_pathway_writing",
+        "evaluation": "checking",
+        "requirement": "",
+        "points": 12,
+        "field": "",
+        "question": {
+            "context": "TK and TA are used in some organisms to transform five molecules of three-carbon sugars into three molecules of a five-carbon sugars. Propose a reaction sequence for this transformation. Label all sugars with a letter followed by a number. Use the letter A for any aldose and the letter K for any ketose. Use the number corresponding to the number of carbon atoms in the sugar; see the example below (e.g., present structure 10 as K7; using full structural formulae is not required). The number of carbon atoms in the sugar intermediates is between 3 and 7. There are no non-enzymatic steps in the pathway. Write either TA or TK as the catalyst for each step. Ignore any phosphorylation, dephosphorylation, and isomerisation reactions. Beside transaldolase activity, TA exhibits aldolase activity resulting in only one product. Any five-carbon sugar (A5 or K5) is an acceptable product. Use the same style as shown in the figure below.",
+            "requirement": "",
+            "image": "/images/9/9.6_ques.png"
+        },
+        "answer": {
+            "description": "The correct scheme is shown with blue 3-carbon starting sugars and red 5-carbon sugar products. The TK reaction is the only option for K6+A3, as the TA reaction would lead to products equivalent to the starting materials (A3+K3). A4 can only react with K3 affording K7. The latter reacts with A3 through the TK reaction leading to two 5-carbon products (in case of the TA reaction the products would be 4- and 6-carbon sugars and not 5-carbon sugars).",
+            "reaction_pathway": [
+                {
+                    "step": 1,
+                    "substrates": [
+                        "A3",
+                        "K6"
+                    ],
+                    "enzyme": "TK",
+                    "products": [
+                        "K5",
+                        "A4",
+                        "K3"
+                    ]
+                },
+                {
+                    "step": 2,
+                    "substrates": [
+                        "A4",
+                        "K3"
+                    ],
+                    "enzyme": "TA",
+                    "products": [
+                        "K7",
+                        "A3"
+                    ]
+                },
+                {
+                    "step": 3,
+                    "substrates": [
+                        "K7",
+                        "A3"
+                    ],
+                    "enzyme": "TK",
+                    "products": [
+                        "K5",
+                        "A5"
+                    ]
+                }
+            ],
+            "grading": {
+                "points_per_step": 2.5,
+                "requirements": "For each correct step, if correct substrates, correct product(s), and correct enzyme are given.",
+                "partial_credit": [
+                    {
+                        "condition": "Mistake in one of the three above results",
+                        "points": 2
+                    },
+                    {
+                        "condition": "Mistake in two of the three above results",
+                        "points": 1
+                    }
+                ],
+                "total_points": 10,
+                "notes": "Alternative correct solutions will also get full marks."
+            }
         }
     }
 ]
