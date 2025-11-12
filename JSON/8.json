@@ -9,8 +9,8 @@
     {
         "name": "IChO-2025_8.1",
         "modality": "text",
-        "type": "table_classification",
-        "evaluation": "step_points",
+        "type": "Qualitative Identification",
+        "evaluation": "Selection Check",
         "points": 4,
         "field": "",
         "source": "IChO-2025",
@@ -70,8 +70,8 @@
     {
         "name": "IChO-2025_8.2",
         "modality": "text",
-        "type": "numerical_calculation",
-        "evaluation": "step_points",
+        "type": "Quantitative Calculation",
+        "evaluation": "Numeric Verification",
         "points": 1,
         "field": "",
         "source": "IChO-2025",
@@ -90,8 +90,8 @@
     {
         "name": "IChO-2025_8.3",
         "modality": "text",
-        "type": "numerical_calculation",
-        "evaluation": "step_points",
+        "type": "Quantitative Calculation",
+        "evaluation": "Numeric Verification",
         "points": 6,
         "field": "",
         "source": "IChO-2025",
@@ -134,8 +134,8 @@
     {
         "name": "IChO-2025_8.4",
         "modality": "image + text",
-        "type": "table_completion",
-        "evaluation": "step_points",
+        "type": "Tabular Enumeration",
+        "evaluation": "Table Validation",
         "points": 3,
         "field": "",
         "source": "IChO-2025",
@@ -188,8 +188,8 @@
     {
         "name": "IChO-2025_8.5",
         "modality": "text",
-        "type": "multiple choice",
-        "evaluation": "exact_match",
+        "type": "Qualitative Identification",
+        "evaluation": "Selection Check",
         "points": 2,
         "field": "",
         "source": "IChO-2025",
@@ -234,8 +234,8 @@
     {
         "name": "IChO-2025_8.6",
         "modality": "image + text",
-        "type": "table_completion",
-        "evaluation": "exact_match",
+        "type": "Qualitative Identification",
+        "evaluation": "Selection Check",
         "points": 2,
         "field": "",
         "source": "IChO-2025",
@@ -301,8 +301,8 @@
     {
         "name": "IChO-2025_8.7",
         "modality": "text",
-        "type": "numerical_calculation",
-        "evaluation": "step_points",
+        "type": "Quantitative Calculation",
+        "evaluation": "Numeric Verification",
         "points": 4,
         "field": "",
         "source": "IChO-2025",
@@ -358,8 +358,8 @@
     {
         "name": "IChO-2025_8.8",
         "modality": "text",
-        "type": "structure_prediction",
-        "evaluation": "step_points",
+        "type": "Structure Construction",
+        "evaluation": "Structure Match",
         "points": 8,
         "field": "",
         "source": "IChO-2025",
@@ -406,7 +406,7 @@
             {
                 "label": "C",
                 "smiles": "[Mn](N=[N+]=[N-])(C#O)(C#O)(C#O)(N1C=CC=NC2=CC=CC=N12)",
-                "alternative_smiles":""
+                "alternative_smiles": ""
             },
             {
                 "label": "D",
@@ -426,8 +426,8 @@
     {
         "name": "IChO-2025_8.9",
         "modality": "text",
-        "type": "structure_prediction",
-        "evaluation": "step_points",
+        "type": "Structure Construction",
+        "evaluation": "Structure Match",
         "points": 5,
         "field": "",
         "source": "IChO-2025",

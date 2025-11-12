@@ -13,8 +13,8 @@
     {
         "name": "IChO-2025_3.1",
         "modality": "image + text",
-        "type": "choice",
-        "evaluation": "checking",
+        "type": "Qualitative Identification",
+        "evaluation": "Selection Check",
         "points": 6,
         "field": "",
         "source": "IChO-2025",
@@ -62,8 +62,8 @@
     {
         "name": "IChO-2025_3.2",
         "modality": "image + text",
-        "type": "ordering",
-        "evaluation": "text_checking",
+        "type": "Qualitative Identification",
+        "evaluation": "Selection Check",
         "points": 4,
         "field": "",
         "source": "IChO-2025",
@@ -107,8 +107,8 @@
     {
         "name": "IChO-2025_3.3",
         "modality": "text",
-        "type": "table_completion",
-        "evaluation": "text_checking",
+        "type": "Tabular Enumeration",
+        "evaluation": "Table Validation",
         "points": 4,
         "field": "",
         "source": "IChO-2025",
@@ -197,8 +197,8 @@
     {
         "name": "IChO-2025_3.4",
         "modality": "text",
-        "type": "table_completion",
-        "evaluation": "text_checking",
+        "type": "Tabular Enumeration",
+        "evaluation": "Table Validation",
         "points": 5,
         "field": "",
         "source": "IChO-2025",
@@ -270,8 +270,8 @@
     {
         "name": "IChO-2025_3.5",
         "modality": "image + text",
-        "type": "structure_drawing",
-        "evaluation": "smiles_comparison",
+        "type": "Structure Construction",
+        "evaluation": "Structure Match",
         "points": 40,
         "field": "",
         "source": "IChO-2025",
@@ -468,149 +468,317 @@
     {
         "name": "IChO-2025_3.6",
         "modality": "image + text",
-        "type": "table_completion",
-        "evaluation": "text_checking",
+        "type": "Tabular Enumeration",
+        "evaluation": "Table Validation",
         "points": 20,
         "field": "",
         "source": "IChO-2025",
         "question": {
-          "context": "Unlike symmetrical ligand L, chiral ligand M lacks symmetry and exists as a pair of R and S enantiomers. Lantern isomers are categorized by ligand chirality composition: (i) all the same (RRRR or SSSS), (ii) one different (RRRS or SSSR), (iii) cis-RRSS, and (iv) trans-RSRS; and by head–tail orientation: (1) HHHH, (2) HHHT, (3) cis-HHTT, (4) trans-HTHT. In any one combination, all possible isomers are either chiral or achiral.",
-          "parsing_note": "Category icons in the header (1–4) and row labels (i–iv) have been converted into textual labels.",
-          "ligand_M": {
-            "image": "images/3/3.6_context.png",
-            "smiles_R": "[H][C@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4",
-            "smiles_S": "[H][C@@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4"
-          },
-          "images": {
-            "orientation_examples": [
-              "images/3/3.6_ques_1.png",
-              "images/3/3.6_ques_2.png",
-              "images/3/3.6_ques_3.png",
-              "images/3/3.6_ques_4.png"
-            ],
-            "head_tail_examples": [
-              "images/3/3.6_ques_i.png",
-              "images/3/3.6_ques_ii.png",
-              "images/3/3.6_ques_iii.png",
-              "images/3/3.6_ques_iv.png"
-            ]
-          },
-          "table": {
-            "row_labels": ["i (RRRR/SSSS)", "ii (RRRS/SSSR)", "iii (cis-RRSS)", "iv (trans-RSRS)"],
-            "col_labels": ["1 (HHHH)", "2 (HHHT)", "3 (cis-HHTT)", "4 (trans-HTHT)"],
-            "cells": [
-              ["", "", "", ""],
-              ["", "", "", ""],
-              ["", "", "", ""],
-              ["", "", "", ""]
-            ]
-          },
-          "requirement": "Complete the table by writing \"C\" for chiral and \"A\" for achiral in each applicable cell."
+            "context": "Unlike symmetrical ligand L, chiral ligand M lacks symmetry and exists as a pair of R and S enantiomers. Lantern isomers are categorized by ligand chirality composition: (i) all the same (RRRR or SSSS), (ii) one different (RRRS or SSSR), (iii) cis-RRSS, and (iv) trans-RSRS; and by head–tail orientation: (1) HHHH, (2) HHHT, (3) cis-HHTT, (4) trans-HTHT. In any one combination, all possible isomers are either chiral or achiral.",
+            "parsing_note": "Category icons in the header (1–4) and row labels (i–iv) have been converted into textual labels.",
+            "ligand_M": {
+                "image": "images/3/3.6_context.png",
+                "smiles_R": "[H][C@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4",
+                "smiles_S": "[H][C@@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4"
+            },
+            "images": {
+                "orientation_examples": [
+                    "images/3/3.6_ques_1.png",
+                    "images/3/3.6_ques_2.png",
+                    "images/3/3.6_ques_3.png",
+                    "images/3/3.6_ques_4.png"
+                ],
+                "head_tail_examples": [
+                    "images/3/3.6_ques_i.png",
+                    "images/3/3.6_ques_ii.png",
+                    "images/3/3.6_ques_iii.png",
+                    "images/3/3.6_ques_iv.png"
+                ]
+            },
+            "table": {
+                "row_labels": [
+                    "i (RRRR/SSSS)",
+                    "ii (RRRS/SSSR)",
+                    "iii (cis-RRSS)",
+                    "iv (trans-RSRS)"
+                ],
+                "col_labels": [
+                    "1 (HHHH)",
+                    "2 (HHHT)",
+                    "3 (cis-HHTT)",
+                    "4 (trans-HTHT)"
+                ],
+                "cells": [
+                    [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    [
+                        "",
+                        "",
+                        "",
+                        ""
+                    ]
+                ]
+            },
+            "requirement": "Complete the table by writing \"C\" for chiral and \"A\" for achiral in each applicable cell."
         },
         "answer": {
-          "context": "Correct chiral/achiral assignments for each combination.",
-          "table": {
-            "row_labels": ["i (RRRR/SSSS)", "ii (RRRS/SSSR)", "iii (cis-RRSS)", "iv (trans-RSRS)"],
-            "col_labels": ["1 (HHHH)", "2 (HHHT)", "3 (cis-HHTT)", "4 (trans-HTHT)"],
-            "cells": [
-              ["C", "C", "C", "C"],
-              ["C", "C", "C", "C"],
-              ["A", "C", "A", "C"],
-              ["A", "C", "A", "A"]
-            ]
-          },
-          "grading": {
-            "notes": "Award points for each correct cell; deduct points for each incorrect cell down to a minimum of zero. No penalty for empty cells.",
-            "per_cell_points": 1.25,
-            "deduction_per_incorrect_cell": 1.25,
-            "min_score": 0
-          }
+            "context": "Correct chiral/achiral assignments for each combination.",
+            "table": {
+                "row_labels": [
+                    "i (RRRR/SSSS)",
+                    "ii (RRRS/SSSR)",
+                    "iii (cis-RRSS)",
+                    "iv (trans-RSRS)"
+                ],
+                "col_labels": [
+                    "1 (HHHH)",
+                    "2 (HHHT)",
+                    "3 (cis-HHTT)",
+                    "4 (trans-HTHT)"
+                ],
+                "cells": [
+                    [
+                        "C",
+                        "C",
+                        "C",
+                        "C"
+                    ],
+                    [
+                        "C",
+                        "C",
+                        "C",
+                        "C"
+                    ],
+                    [
+                        "A",
+                        "C",
+                        "A",
+                        "C"
+                    ],
+                    [
+                        "A",
+                        "C",
+                        "A",
+                        "A"
+                    ]
+                ]
+            },
+            "grading": {
+                "notes": "Award points for each correct cell; deduct points for each incorrect cell down to a minimum of zero. No penalty for empty cells.",
+                "per_cell_points": 1.25,
+                "deduction_per_incorrect_cell": 1.25,
+                "min_score": 0
+            }
         }
-      },
-      {
+    },
+    {
         "name": "IChO-2025_3.7",
         "modality": "image + text",
-        "type": "table_completion",
-        "evaluation": "numeric_checking",
+        "type": "Tabular Enumeration",
+        "evaluation": "Table Validation",
         "points": 32,
         "field": "",
         "source": "IChO-2025",
         "question": {
-          "context": "Complete the table with the number of possible isomers for each combination of ligand chirality pattern (i–iv) and head–tail orientation (1–4). Each cell corresponds to one structural category. Enter the total number of distinct isomers in each case.",
-          "parsing_note": "Header icons (1–4) and row icons (i–iv) are represented by local images; textual labels are also provided.",
-          "ligand_M": {
-            "image": "images/3/3.6_context.png",
-            "smiles_R": "[H][C@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4",
-            "smiles_S": "[H][C@@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4"
-          },
-          "images": {
-            "orientation_examples": [
-              "images/3/3.6_ques_1.png",
-              "images/3/3.6_ques_2.png",
-              "images/3/3.6_ques_3.png",
-              "images/3/3.6_ques_4.png"
-            ],
-            "head_tail_examples": [
-              "images/3/3.6_ques_i.png",
-              "images/3/3.6_ques_ii.png",
-              "images/3/3.6_ques_iii.png",
-              "images/3/3.6_ques_iv.png"
-            ]
-          },
-          "table": {
-            "row_labels": ["i (RRRR/SSSS)", "ii (RRRS/SSSR)", "iii (cis-RRSS)", "iv (trans-RSRS)"],
-            "col_labels": ["1 (HHHH)", "2 (HHHT)", "3 (cis-HHTT)", "4 (trans-HTHT)"],
-            "cells": [
-              [
-                { "value": "", "prefilled": false },
-                { "value": "2", "prefilled": true },
-                { "value": "", "prefilled": false },
-                { "value": "", "prefilled": false }
-              ],
-              [
-                { "value": "", "prefilled": false },
-                { "value": "", "prefilled": false },
-                { "value": "4", "prefilled": true },
-                { "value": "", "prefilled": false }
-              ],
-              [
-                { "value": "", "prefilled": false },
-                { "value": "", "prefilled": false },
-                { "value": "", "prefilled": false },
-                { "value": "", "prefilled": false }
-              ],
-              [
-                { "value": "", "prefilled": false },
-                { "value": "", "prefilled": false },
-                { "value": "", "prefilled": false },
-                { "value": "", "prefilled": false }
-              ]
-            ]
-          },
-          "requirement": "Write the total number of possible isomers for each combination. Cells that are already filled do not need to be answered. No partial credit for swapped rows/columns. No error carried forward from previous part."
+            "context": "Complete the table with the number of possible isomers for each combination of ligand chirality pattern (i–iv) and head–tail orientation (1–4). Each cell corresponds to one structural category. Enter the total number of distinct isomers in each case.",
+            "parsing_note": "Header icons (1–4) and row icons (i–iv) are represented by local images; textual labels are also provided.",
+            "ligand_M": {
+                "image": "images/3/3.6_context.png",
+                "smiles_R": "[H][C@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4",
+                "smiles_S": "[H][C@@]1(C(C2=CC=CN=C2)=NN3)C(CCC1)=C3C4=CN=CC=C4"
+            },
+            "images": {
+                "orientation_examples": [
+                    "images/3/3.6_ques_1.png",
+                    "images/3/3.6_ques_2.png",
+                    "images/3/3.6_ques_3.png",
+                    "images/3/3.6_ques_4.png"
+                ],
+                "head_tail_examples": [
+                    "images/3/3.6_ques_i.png",
+                    "images/3/3.6_ques_ii.png",
+                    "images/3/3.6_ques_iii.png",
+                    "images/3/3.6_ques_iv.png"
+                ]
+            },
+            "table": {
+                "row_labels": [
+                    "i (RRRR/SSSS)",
+                    "ii (RRRS/SSSR)",
+                    "iii (cis-RRSS)",
+                    "iv (trans-RSRS)"
+                ],
+                "col_labels": [
+                    "1 (HHHH)",
+                    "2 (HHHT)",
+                    "3 (cis-HHTT)",
+                    "4 (trans-HTHT)"
+                ],
+                "cells": [
+                    [
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "2",
+                            "prefilled": true
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        }
+                    ],
+                    [
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "4",
+                            "prefilled": true
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        }
+                    ],
+                    [
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        }
+                    ],
+                    [
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        },
+                        {
+                            "value": "",
+                            "prefilled": false
+                        }
+                    ]
+                ]
+            },
+            "requirement": "Write the total number of possible isomers for each combination. Cells that are already filled do not need to be answered. No partial credit for swapped rows/columns. No error carried forward from previous part."
         },
         "answer": {
-          "context": "Correct number of isomers for each combination.",
-          "table": {
-            "row_labels": ["i (RRRR/SSSS)", "ii (RRRS/SSSR)", "iii (cis-RRSS)", "iv (trans-RSRS)"],
-            "col_labels": ["1 (HHHH)", "2 (HHHT)", "3 (cis-HHTT)", "4 (trans-HTHT)"],
-            "cells": [
-              ["2", "2", "2", "2"],
-              ["2", "8", "4", "2"],
-              ["1", "4", "3", "2"],
-              ["1", "2", "1", "1"]
-            ]
-          },
-          "grading": {
-            "notes": "Each correct number earns the points shown; prefilled cells are not graded. No credit for incorrect or misplaced values; no alternative arrangements accepted; no carry-forward credit.",
-            "total_points": 32,
-            "per_cell_points": [
-              [1, 1, 1, 1],
-              [2, 4, 4, 2],
-              [2, 4, 4, 2],
-              [2, 2, 2, 3]
-            ]
-          }
+            "context": "Correct number of isomers for each combination.",
+            "table": {
+                "row_labels": [
+                    "i (RRRR/SSSS)",
+                    "ii (RRRS/SSSR)",
+                    "iii (cis-RRSS)",
+                    "iv (trans-RSRS)"
+                ],
+                "col_labels": [
+                    "1 (HHHH)",
+                    "2 (HHHT)",
+                    "3 (cis-HHTT)",
+                    "4 (trans-HTHT)"
+                ],
+                "cells": [
+                    [
+                        "2",
+                        "2",
+                        "2",
+                        "2"
+                    ],
+                    [
+                        "2",
+                        "8",
+                        "4",
+                        "2"
+                    ],
+                    [
+                        "1",
+                        "4",
+                        "3",
+                        "2"
+                    ],
+                    [
+                        "1",
+                        "2",
+                        "1",
+                        "1"
+                    ]
+                ]
+            },
+            "grading": {
+                "notes": "Each correct number earns the points shown; prefilled cells are not graded. No credit for incorrect or misplaced values; no alternative arrangements accepted; no carry-forward credit.",
+                "total_points": 32,
+                "per_cell_points": [
+                    [
+                        1,
+                        1,
+                        1,
+                        1
+                    ],
+                    [
+                        2,
+                        4,
+                        4,
+                        2
+                    ],
+                    [
+                        2,
+                        4,
+                        4,
+                        2
+                    ],
+                    [
+                        2,
+                        2,
+                        2,
+                        3
+                    ]
+                ]
+            }
         }
-      }
+    }
 ]

@@ -13,8 +13,8 @@
     {
         "name": "IChO-2025_2.1",
         "modality": "image + text",
-        "type": "structure_drawing",
-        "evaluation": "smiles_comparison",
+        "type": "Structure Construction",
+        "evaluation": "Structure Match",
         "points": 12,
         "field": "",
         "source": "IChO-2025",
@@ -146,8 +146,8 @@
     {
         "name": "IChO-2025_2.2",
         "modality": "image + text",
-        "type": "structure_drawing",
-        "evaluation": "smiles_comparison",
+        "type": "Structure Construction",
+        "evaluation": "Structure Match",
         "points": 19,
         "field": "",
         "source": "IChO-2025",
@@ -255,8 +255,8 @@
     {
         "name": "IChO-2025_2.3",
         "modality": "image + text",
-        "type": "structure_drawing, filling the reactangles",
-        "evaluation": "smiles_comparison",
+        "type": "Structure Construction",
+        "evaluation": "Structure Match",
         "points": 18,
         "field": "",
         "source": "IChO-2025",
@@ -440,8 +440,8 @@
     {
         "name": "IChO-2025_2.4",
         "modality": "image + text",
-        "type": "structure_drawing, filling the reactangles",
-        "evaluation": "smiles_comparison",
+        "type": "Qualitative Identification",
+        "evaluation": "Selection Check",
         "points": 18,
         "field": "",
         "source": "IChO-2025",

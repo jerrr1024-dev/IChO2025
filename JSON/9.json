@@ -9,8 +9,8 @@
     {
         "name": "IChO-2025_9.1",
         "modality": "image + text",
-        "type": "choice",
-        "evaluation": "checking",
+        "type": "Qualitative Identification",
+        "evaluation": "Selection Check",
         "requirement": "",
         "points": 2,
         "field": "",
@@ -66,8 +66,8 @@
     {
         "name": "IChO-2025_9.2",
         "modality": "image + text",
-        "type": "moleculat_strucutre_drawing",
-        "evaluation": "checking",
+        "type": "Structure Construction",
+        "evaluation": "Structure Match",
         "requirement": "smiles_comparison",
         "points": 6,
         "field": "",
@@ -84,7 +84,7 @@
                         "C[N+]1=[C-]SC=C1C",
                         "C[NH+]1CSC=C1C"
                     ],
-                    "grading":
+                    "grading": {}
                 },
                 {
                     "name": "6",
@@ -122,8 +122,8 @@
     {
         "name": "IChO-2025_9.3-4",
         "modality": "image + text",
-        "type": "moleculat_strucutre_drawing",
-        "evaluation": "checking",
+        "type": "Structure Construction",
+        "evaluation": "Structure Match",
         "requirement": "smiles_comparison",
         "points": 8,
         "field": "",
@@ -180,8 +180,8 @@
     {
         "name": "IChO-2025_9.5",
         "modality": "image + text",
-        "type": "moleculat_strucutre_drawing",
-        "evaluation": "checking",
+        "type": "Structure Construction",
+        "evaluation": "Structure Match",
         "requirement": "smiles_comparison",
         "points": 10,
         "field": "",
@@ -245,8 +245,8 @@
     {
         "name": "IChO-2025_9.6",
         "modality": "image + text",
-        "type": "reaction_pathway_writing",
-        "evaluation": "checking",
+        "type": "Mechanistic Reasoning",
+        "evaluation": "Reasoning Consistency",
         "requirement": "",
         "points": 12,
         "field": "",

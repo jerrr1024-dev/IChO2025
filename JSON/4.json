@@ -10,8 +10,8 @@
     {
         "name": "IChO-2025_4.1",
         "modality": "text",
-        "type": "computing",
-        "evaluation": "checking",
+        "type": "Quantitative Calculation",
+        "evaluation": "Numeric Verification",
         "points": 3,
         "field": "",
         "source": "IChO-2025",
@@ -39,8 +39,8 @@
     {
         "name": "IChO-2025_4.2-3",
         "modality": "image + text",
-        "type": "reasoning",
-        "evaluation": "checking",
+        "type": "Mechanistic Reasoning",
+        "evaluation": "Reasoning Consistency",
         "points": 21,
         "field": "",
         "source": "IChO-2025",
@@ -248,8 +248,8 @@
     {
         "name": "IChO-2025_4.4",
         "modality": "text",
-        "type": "computing",
-        "evaluation": "checking",
+        "type": "Quantitative Calculation",
+        "evaluation": "Numeric Verification",
         "points": 16,
         "field": "",
         "source": "IChO-2025",
@@ -400,4 +400,5 @@
                 }
             }
         ]
-    ]
+    }
+]
